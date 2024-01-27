@@ -7,7 +7,7 @@ using static CharacterTierData;
 [CreateAssetMenu(fileName = "EnemyData", menuName = "GGJ_Datas/EnemyData", order = 4)]
 public class EnemyData : EntityData
 {
-    public enum Turn
+    public enum ETurn
     {
         TURN_1,
         TURN_2,
@@ -17,8 +17,8 @@ public class EnemyData : EntityData
         TURN_6,
         TURN_7,
     }
-    public ETier Tier => _tier;
+    public ETurn Turn => _turn;
     [SerializeField]
-    private ETier _tier;
+    private ETurn _turn;
 
 }
