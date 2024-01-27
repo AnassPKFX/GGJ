@@ -28,7 +28,22 @@ MonoBehaviour:
   - m_Path: Assets/PopcornFXAssets/Particles/Basic.pkfx.asset
     m_New: 3e7b7a9630888f54385840976f6f4635
     m_Old: 3e7b7a9630888f54385840976f6f4635
-  m_RenderingCategory: 0
+  - m_Path: Assets/PopcornFXAssets/Particles/emote_thumbsUp.pkfx.asset
+    m_New: bd3a4b02bcb8ad14e879d81486027ef8
+    m_Old: bd3a4b02bcb8ad14e879d81486027ef8
+  - m_Path: Assets/PopcornFXAssets/Particles/emote_thumbsDown.pkfx.asset
+    m_New: b24765b37dc2fdb43a91cc990ef7338a
+    m_Old: b24765b37dc2fdb43a91cc990ef7338a
+  - m_Path: Assets/PopcornFXAssets/Particles/SpeechBubble.pkfx.asset
+    m_New: b4031d37f336f664394cd3135841a642
+    m_Old: b4031d37f336f664394cd3135841a642
+  - m_Path: Assets/PopcornFXAssets/Particles/joke_succes.pkfx.asset
+    m_New: 4c6ed0c73f81bc940ba615775d3b8bc7
+    m_Old: 4c6ed0c73f81bc940ba615775d3b8bc7
+  - m_Path: Assets/PopcornFXAssets/Particles/joke_failure.pkfx.asset
+    m_New: ebee371600e2bfc4e8f645a6516f499f
+    m_Old: ebee371600e2bfc4e8f645a6516f499f
+  m_RenderingCategory: 1
   m_MaterialFactory: {fileID: 11400000, guid: 74688adbe42c0844e9542a04afffdf07, type: 2}
   m_EnableSoftParticles: 1
   m_DisableDynamicEffectBounds: 0
@@ -52,6 +67,232 @@ MonoBehaviour:
       (none) (none) (none) (none) (none) (none) (none) 1 0
     m_DefaultVertexBufferSize: 9396
     m_DefaultIndexBufferSize: 14097
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/bubbleOutline.png
+      (none) (none) (none) (none) (none) (none) (none) 1 -2
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/bubble.png
+      (none) (none) (none) (none) (none) (none) (none) 1 -1
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs  Content/Textures/thumbsDown.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/skull.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/thumbsUp.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/crown.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/thumbsDown.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs  Content/Textures/thumbsUp.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs  Content/Textures/crown.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs  Content/Textures/bubbleOutline.png
+      (none) (none) (none) (none) (none) (none) (none) 1 -2
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Ribbon  Color Diffuse  AlphaBlend UVs RGBOnly Library/PopcornFXCore/Materials/DefaultTextures/Black.dds
+      (none) (none) (none) (none) (none) (none) (none) 1 -2
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Ribbon  Color Diffuse  AlphaBlend UVs  Library/PopcornFXCore/Materials/DefaultTextures/White.dds
+      (none) (none) (none) (none) (none) (none) (none) 1 -1
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Atlas AlphaRemap Color Diffuse  AlphaBlend UVs RGBOnly
+      Content/Textures/glyphs_alphaRemap.png (none) (none) (none) (none) Content/Textures/VFX_asset_AlphaRemapDissolve3.png
+      (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Ribbon  Color Diffuse  AlphaBlend UVs RGBOnly Library/PopcornFXCore/Materials/DefaultTextures/White.dds
+      (none) (none) (none) (none) (none) (none) (none) 1 -1
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs  Content/Textures/bubble.png
+      (none) (none) (none) (none) (none) (none) (none) 1 -1
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Ribbon  Color Diffuse  AlphaBlend UVs  Library/PopcornFXCore/Materials/DefaultTextures/Black.dds
+      (none) (none) (none) (none) (none) (none) (none) 1 -2
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Atlas AlphaRemap Color Diffuse  AlphaBlend UVs  Content/Textures/glyphs_alphaRemap.png
+      (none) (none) (none) (none) Content/Textures/VFX_asset_AlphaRemapDissolve3.png
+      (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs  Content/Textures/skull.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  Additive UVs RGBOnly Library/PopcornFXCore/Materials/DefaultTextures/White.dds
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 1800
+    m_DefaultIndexBufferSize: 2703
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  Additive UVs  Library/PopcornFXCore/Materials/DefaultTextures/White.dds
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 1800
+    m_DefaultIndexBufferSize: 2703
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Ribbon  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/fabric2.png
+      (none) (none) (none) (none) (none) (none) (none) 1 -1
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Atlas Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/dice_4x4.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/diceBubble.png
+      (none) (none) (none) (none) (none) (none) (none) 1 -1
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/diceBubbleOutline.png
+      (none) (none) (none) (none) (none) (none) (none) 1 -2
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Atlas Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/roll_lines.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs  Content/Textures/circle.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 591
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Atlas Color Diffuse  AlphaBlend UVs  Content/Textures/dice_4x4.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs  Content/Textures/diceBubble.png
+      (none) (none) (none) (none) (none) (none) (none) 1 -1
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Ribbon  Color Diffuse  AlphaBlend UVs  Content/Textures/fabric2.png
+      (none) (none) (none) (none) (none) (none) (none) 1 -1
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Atlas Color Diffuse  AlphaBlend UVs  Content/Textures/roll_lines.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs  Content/Textures/diceBubbleOutline.png
+      (none) (none) (none) (none) (none) (none) (none) 1 -2
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/circle.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 606
+    m_DefaultIndexBufferSize: 1155
     m_StaticWorldBounds:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 50, y: 50, z: 50}
