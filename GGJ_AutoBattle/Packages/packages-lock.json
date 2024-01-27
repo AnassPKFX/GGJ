@@ -1,13 +1,13 @@
 {
   "dependencies": {
     "com.persistant-studios.popcornfx": {
-      "version": "file:D:/GGJ/GGJ/Plugin/com.persistant-studios.popcornfx",
+      "version": "file:../Plugin/com.persistant-studios.popcornfx",
       "depth": 0,
       "source": "local",
       "dependencies": {}
     },
     "com.persistant-studios.popcornfx.urp": {
-      "version": "file:D:/GGJ/GGJ/Plugin/com.persistant-studios.popcornfx.urp",
+      "version": "file:../Plugin/com.persistant-studios.popcornfx.urp",
       "depth": 0,
       "source": "local",
       "dependencies": {
