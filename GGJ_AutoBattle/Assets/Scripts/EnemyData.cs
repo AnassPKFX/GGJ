@@ -21,4 +21,7 @@ public class EnemyData : EntityData
     [SerializeField]
     private ETurn _turn;
 
+    public int EnemyTeamTotalPoints => _EnemyTeamTotalPoints;
+    [SerializeField]
+    protected int _EnemyTeamTotalPoints;
 }
