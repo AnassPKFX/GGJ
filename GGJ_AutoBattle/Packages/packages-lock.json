@@ -1,5 +1,21 @@
 {
   "dependencies": {
+    "com.persistant-studios.popcornfx": {
+      "version": "file:D:/GGJ/GGJ/Plugin/com.persistant-studios.popcornfx",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
+    "com.persistant-studios.popcornfx.urp": {
+      "version": "file:D:/GGJ/GGJ/Plugin/com.persistant-studios.popcornfx.urp",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "10.2.2",
+        "com.unity.render-pipelines.universal": "10.2.2",
+        "com.persistant-studios.popcornfx": "2.18.4"
+      }
+    },
     "com.unity.burst": {
       "version": "1.8.11",
       "depth": 1,

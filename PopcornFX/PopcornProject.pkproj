@@ -1,0 +1,133 @@
+Version = 2.18.3.19327;
+CProjectSettings	$D857A09F
+{
+	General = "$35A36C4E";
+	Scene = "$4B933A29";
+	LOD = "$9154DFA0";
+	Constants = "$EAC726E3";
+	Features = "$BEDF8936";
+	Assets = "$4ADE8DE2";
+	Budgets = "$D279714D";
+	Baking = "$5F621394";
+	Editor = "$41E5AFE7";
+	Documentation = "$2909A531";
+}
+CProjectSettingsGeneral	$35A36C4E
+{
+	ProjectName = "PopcornFX";
+	RootDir = "GGJ VFX";
+	PresetsDir = "Editor/Presets";
+	AnimationTracksDir = "Editor/AnimationTracks";
+	ThumbnailsDir = "Editor/Thumbnails";
+	LibraryDir = "Library";
+	RuntimeConfigsDir = "Config";
+	DocumentationDir = "Documentation";
+	EditorCacheDir = "Editor/Cache";
+}
+CProjectSettingsScene	$4B933A29
+{
+	CoordinateFrame = Left_Handed_Y_Up;
+	CoordinateFrameAxisX = Right;
+	CoordinateFrameAxisY = Up;
+	CoordinateFrameAxisZ = Backward;
+	DistanceUnits = Meter;
+	MaxDistanceBeforeTeleport = inf;
+}
+CProjectSettingsLOD	$9154DFA0
+{
+}
+CProjectSettingsConstants	$EAC726E3
+{
+}
+CProjectSettingsAssets	$4ADE8DE2
+{
+	EffectExtensions = {
+		"pkfx",
+	};
+	MeshExtensions = {
+		"fbx",
+		"gr2",
+	};
+	ImageExtensions = {
+		"dds",
+		"png",
+		"jpg",
+		"jpeg",
+		"tga",
+		"tif",
+		"tiff",
+		"pkm",
+		"pvr",
+		"exr",
+		"hdr",
+	};
+	ImageAtlasExtensions = {
+		"pkat",
+	};
+	VectorFieldExtensions = {
+		"fga",
+		"pkvf",
+	};
+	SoundExtensions = {
+		"wav",
+		"ogg",
+		"mp3",
+	};
+	SimCacheExtensions = {
+		"pksc",
+	};
+	FontExtensions = {
+		"ttf",
+		"otf",
+		"pkfm",
+	};
+	MaterialExtensions = {
+		"pkma",
+	};
+	VertexShaderExtensions = {
+		"vert",
+	};
+	FragmentShaderExtensions = {
+		"frag",
+	};
+	ShaderIncludeExtensions = {
+		"h",
+		"inl",
+	};
+	RendererInterfaceExtensions = {
+		"pkri",
+	};
+	VideoExtensions = {
+		"mp4",
+		"avi",
+		"ogv",
+		"wmv",
+	};
+}
+CProjectSettingsBudgets	$D279714D
+{
+}
+CProjectSettingsBaking	$5F621394
+{
+}
+CProjectSettingsEditor	$41E5AFE7
+{
+	DefaultRestitution = 1.0000000e+00;
+	DefaultRestitutionCombineMode = Multiply;
+	DefaultFriction = 5.0000000e-01;
+	DefaultFrictionCombineMode = Average;
+	WindScale = 1.0000000e+00;
+}
+CProjectSettingsFeatures	$BEDF8936
+{
+	EnableSceneSweeps = false;
+	EnableSceneWind = false;
+	EnableGBufferSampling = false;
+	EnableAttributeSamplerVectorField = false;
+	EnableRendererDecal = false;
+	EnableRendererLight = false;
+	EnableRendererSound = false;
+}
+CProjectSettingsDocumentation	$2909A531
+{
+}

@@ -36,8 +36,14 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - PopcornFX_0
   m_SortingLayers:
+  - name: PopcornFXUI
+    uniqueID: 0
+    locked: 0
+  - name: PopcornFX
+    uniqueID: 919661238
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

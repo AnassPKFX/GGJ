@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09159473643531345883668017193e4d, type: 3}
+  m_Name: PKFxSettings
+  m_EditorClassIdentifier: 
+  m_GeneralCategory: 1
+  m_AssetCategory: 1
+  m_QualityCategory: 1
+  m_EnableRaycastForCollisions: 0
+  m_EnableAssetPlatformVersion: 0
+  m_CurrentPlatform: -2
+  m_PopcornLayerName:
+  - PopcornFX_0
+  - 
+  - 
+  - 
+  - 
+  m_AssetGUID:
+  - m_Path: Assets/PopcornFXAssets/Particles/Basic.pkfx.asset
+    m_New: 3e7b7a9630888f54385840976f6f4635
+    m_Old: 3e7b7a9630888f54385840976f6f4635
+  m_RenderingCategory: 0
+  m_MaterialFactory: {fileID: 11400000, guid: 74688adbe42c0844e9542a04afffdf07, type: 2}
+  m_EnableSoftParticles: 1
+  m_DisableDynamicEffectBounds: 0
+  m_UseApplicationAudioLoopback: 0
+  m_EnableThumbnails: 1
+  m_UseThumbnailsInBuilds: 0
+  m_EnableAnimatedThumbnails: 1
+  m_UseAnimatedThumbnailsInBuilds: 0
+  m_AutomaticMeshResizing: 1
+  m_VertexBufferSizeMultiplicator: 0.5
+  m_IndexBufferSizeMultiplicator: 0.5
+  m_MeshesDefaultSize:
+  - m_GeneratedName: Billboard  Color Diffuse  Additive UVs  Library/PopcornFXCore/Materials/DefaultTextures/Diffuse.dds
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 6000
+    m_DefaultIndexBufferSize: 9003
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Color Diffuse  Additive UVs RGBOnly Library/PopcornFXCore/Materials/DefaultTextures/Diffuse.dds
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 9396
+    m_DefaultIndexBufferSize: 14097
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
+  m_UseMeshInstancing: 1
+  m_FreeUnusedBatches: 0
+  m_FrameCountBeforeFreeingUnusedBatches: 240
+  m_ManualCameraLayer: 0
+  m_MaxCameraSupport: 1
+  m_UpdateSimManually: 0
+  m_EnablePopcornFXLight: 0
+  m_MaxPopcornFXLights: 16
+  m_EnablePopcornFXSound: 0
+  m_MaxPopcornFXSounds: 16
+  m_ThreadingCategory: 0
+  m_SingleThreadedExecution: 0
+  m_OverrideThreadPoolConfig: 0
+  m_ThreadsAffinity: 
+  m_ProfilerCategory: 1
+  m_ProfilerSceneBudgetInSeconds: 0.002
+  m_ProfilerPerEffectBudgetInSeconds: 0.0005
+  m_ProfilerSceneParticleBudget: 10000
+  m_ProfilerPerEffectParticleBudget: 1000
+  m_CPPMarkersMaxDepth: 2
+  m_ProfilerColorBudgetExceeded: {r: 1, g: 0, b: 0, a: 1}
+  m_ProfilerColorBudgetNormal: {r: 0, g: 1, b: 0, a: 1}
+  m_ProfilerHideKey: 101
+  m_ProfilerPauseKey: 114
+  m_ProfilerSortKey: 116
+  m_UseGPUBillboarding: 0
+  m_EnableLocalizedPages: 1
+  m_EnableLocalizedByDefault: 0
+  m_FeatureSetCategory: 1
+  m_EnableDistortion: 0
+  m_EnableBlur: 0
+  m_BlurFactor: 0.2
+  m_DebugCategory: 1
+  m_EnablePopcornFXLogs: 1
+  m_EnableFileLogs: 0
+  m_DebugEffectsBoundingBoxes: 0
+  m_DebugEffectsRaycasts: 0
+  m_BakingCategory: 1
+  m_EnableEffectHotreload: 1
+  m_EnableHotreloadInPlayMode: 0
+  m_UseHashesAsMaterialName: 1
+  m_EnableForceDeterminism: 0
+  m_PopcornPackFxPath: ../PopcornFX
+  m_UnityPackFxPath: /PopcornFXAssets
+  m_QualityVersionNames:
+  - Performant
+  - Balanced
+  - HighFidelity
+  m_CurrentQualityVersionName: HighFidelity
