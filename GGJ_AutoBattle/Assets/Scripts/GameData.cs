@@ -14,21 +14,46 @@ public class GameData : ScriptableObject
     }
 
     public int NumberOfSlotsStart => _numberOfSlotsStart;
+    public int MoneyStart => _moneyStart;
+    [Header("--- Initial Values ---")]
     [SerializeField]
     private int _numberOfSlotsStart = 3;
-
-    public int MoneyStart => _moneyStart;
     [SerializeField]
     private int _moneyStart = 15;
 
+
+
     public int TotalRoundCount => _totalRoundCount;
+    public int AddedMoneyPerTurn => _addedMoneyPerTurn;
+    [Header("--- Core ---")]
     [SerializeField]
     private int _totalRoundCount = 7;
+    [SerializeField]
+    private int _addedMoneyPerTurn = 15;
+
+    public float MultiplierPriceFromStats => _multiplierPriceFromStats;
+    [Header("-- Shop")]
+    [SerializeField]
+    private float _multiplierPriceFromStats = 1;
+
+
+    public int RerollPrice => _rerollPrice;
+    public float StartFailChancePercentage => _startFailChancePercentage;
+    public float FailChanceIncrement => _failChanceIncrement;
+    [Header("- Reroll")]
+    [SerializeField]
+    private int _rerollPrice = 1;
+    [SerializeField]
+    private float _startFailChancePercentage = 40;
+    [SerializeField]
+    private float _failChanceIncrement = 20;
+
 
 
     public int MoneyUpgradeMin => _moneyUpgradeMin;
     public int MoneyUpgradeMax => _moneyUpgradeMax;
-    [Header("Upgrades")]
+
+    [Header("--- Upgrades ---")]
     [SerializeField]
     private int _moneyUpgradeMin = 5;
     [SerializeField]
