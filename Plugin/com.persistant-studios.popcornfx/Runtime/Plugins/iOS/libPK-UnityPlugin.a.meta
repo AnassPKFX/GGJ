@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: b705a7f0286e4f1db8566e20dcff00d1
+PluginImporter:
+  serializedVersion: 2
+  isPreloaded: 0
+  isOverridable: 0
+  platformData:
+  - first:
+      iPhone: iOS
+    second:
+      enabled: 1
+      settings:
+        AddToEmbeddedBinaries: false
