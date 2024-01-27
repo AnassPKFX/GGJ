@@ -1,4 +1,4 @@
-Version = 2.18.3.19327;
+Version = 2.18.4.19551;
 CProjectSettings	$D857A09F
 {
 	General = "$35A36C4E";
@@ -129,5 +129,8 @@ CProjectSettingsFeatures	$BEDF8936
 	EnableRendererSound = false;
 }
 CProjectSettingsDocumentation	$2909A531
+{
+}
+CEditorProject	$D6EEA348
 {
 }
