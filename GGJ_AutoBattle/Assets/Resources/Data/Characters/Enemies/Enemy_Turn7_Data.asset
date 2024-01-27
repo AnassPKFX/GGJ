@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1356890769ec48144a910469aff69221, type: 3}
   m_Name: Enemy_Turn7_Data
   m_EditorClassIdentifier: 
-  _maxStatPerCategory: 5
-  _maxStatPerCharacter: 10
-  _turn: 2
+  _maxStatPerCategory: 9
+  _maxStatPerCharacter: 20
+  _turn: 6
+  _EnemyTeamTotalPoints: 99

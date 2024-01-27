@@ -15,3 +15,4 @@ MonoBehaviour:
   _maxStatPerCategory: 7
   _maxStatPerCharacter: 13
   _turn: 3
+  _EnemyTeamTotalPoints: 45
