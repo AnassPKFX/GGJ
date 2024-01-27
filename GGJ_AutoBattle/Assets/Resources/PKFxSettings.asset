@@ -29,7 +29,7 @@ MonoBehaviour:
     m_New: 3e7b7a9630888f54385840976f6f4635
     m_Old: 3e7b7a9630888f54385840976f6f4635
   m_RenderingCategory: 0
-  m_MaterialFactory: {fileID: 11400000, guid: 74688adbe42c0844e9542a04afffdf07, type: 2}
+  m_MaterialFactory: {fileID: 11400000, guid: 1de2e57857a05ef4fa945bad700920b4, type: 2}
   m_EnableSoftParticles: 1
   m_DisableDynamicEffectBounds: 0
   m_UseApplicationAudioLoopback: 0

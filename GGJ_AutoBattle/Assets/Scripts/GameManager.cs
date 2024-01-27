@@ -17,13 +17,24 @@ public class GameManager : MonoBehaviour
     public int NumberOfSlots => _numberOfSlots;
     private int _numberOfSlots;
 
-    public int Money => _money;
+    public int Money { get => _money; set => _money = value; }
     private int _money;
     public int RoundCount => _roundCount;
     private int _roundCount;
 
     public EGamePhase GamePhase => _gamePhase;
     private EGamePhase _gamePhase;
+
+    public CharacterTierData.ETier CurrentTier => _currentTier;
+    private CharacterTierData.ETier _currentTier;
+    public EnemyData.ETurn CurrentTurn => _currentTurn;
+    private EnemyData.ETurn _currentTurn;
+
+    public List<Joker> Team {get => _team; set=> _team = value; }
+    private List<Joker> _team;
+
+    public Movable CurrentDraggedMovable{get => _currentDraggedEntity; set=> _currentDraggedEntity = value; }
+    private Movable _currentDraggedEntity;
 
     public GameData GameData => _gameData;
 
@@ -64,7 +75,10 @@ public class GameManager : MonoBehaviour
         _money = _gameData.MoneyStart;
         _roundCount = 0;
         _gamePhase = EGamePhase.START;
-        List<HumourTypeData> humourTypeDatas = Resources.LoadAll<HumourTypeData>("Data/HumourTypeData").ToList();
+        _currentTier = CharacterTierData.ETier.TIER_1;
+        _currentTurn = EnemyData.ETurn.TURN_1;
+
+    List<HumourTypeData> humourTypeDatas = Resources.LoadAll<HumourTypeData>("Data/HumourTypeData").ToList();
         foreach(var htd in humourTypeDatas)
         {
             _humourTypeDict.Add(htd.HumourType, htd);
@@ -100,12 +114,34 @@ public class GameManager : MonoBehaviour
             if (_gamePhase == EGamePhase.UPGRADE && _roundCount < _gameData.TotalRoundCount-1)
             {
                 _gamePhase = EGamePhase.SHOP;
-                _roundCount++;
-                Debug.Log("<color=magenta> Round starting : " + ((int)_roundCount+1) + "</color>");
+
+                _currentTier = CharacterTierData.ETier.TIER_1;
+
+
             }
             else
             {
                 _gamePhase = (EGamePhase)(((int)_gamePhase+1) % 5);
+            }
+            Debug.Log("<color=magenta> Round starting : " + ((int)_roundCount+1) + "</color>");
+            
+            _currentTurn = (EnemyData.ETurn)(((int)_currentTurn + 1) % 7);
+            _roundCount++;
+            switch (_currentTurn)
+            {
+                case EnemyData.ETurn.TURN_1:
+                case EnemyData.ETurn.TURN_2:
+                    _currentTier = CharacterTierData.ETier.TIER_1;
+                    break;
+                case EnemyData.ETurn.TURN_3:
+                case EnemyData.ETurn.TURN_4:
+                    _currentTier = CharacterTierData.ETier.TIER_2;
+                    break;
+                case EnemyData.ETurn.TURN_5:
+                case EnemyData.ETurn.TURN_6:
+                case EnemyData.ETurn.TURN_7:
+                    _currentTier = CharacterTierData.ETier.TIER_3;
+                    break;
             }
         }
         LaunchNextPhase(_gamePhase);
@@ -124,13 +160,15 @@ public class GameManager : MonoBehaviour
                 // TO DO
                 return;
             case EGamePhase.FIGHT:
-                // TO DO
+                ShopManager.Instance.StartShopPhase();
                 return;  
             case EGamePhase.UPGRADE:
                 UpgradeStatsRandom();
                 return;
             case EGamePhase.END:
                 _roundCount = 0;
+                _currentTurn = EnemyData.ETurn.TURN_1;
+
                 Debug.Log("<color=cyan> GAME END </color>");
 
                 NextPhase(false);
