@@ -53,8 +53,8 @@ Material:
     - _Shadow_treshold: 0.31
     - _Sharpness: 0
     m_Colors:
-    - _Color1: {r: 1, g: 0, b: 0.6756029, a: 1}
-    - _Color2: {r: 1, g: 0, b: 0.35268784, a: 1}
+    - _Color1: {r: 0.6792453, g: 0.16337003, b: 0.022427924, a: 1}
+    - _Color2: {r: 0.4056604, g: 0.02104842, b: 0.030785346, a: 1}
     - _OutlineColor: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4727958970673863602
