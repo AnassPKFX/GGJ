@@ -68,11 +68,11 @@ public class ShopManager : MonoBehaviour
         StartCoroutine(Wait(1.5f));
     }
     IEnumerator Wait(float t) { 
-        ShopScene.SetActive(false);
         yield return new WaitForSeconds(t);
         _jokersOnSale.ForEach(x => x.transform.GetComponent<Collider>().enabled = false);
         _jokersOnSale.ForEach(x => StartCoroutine(x.MoveToSlot(GameManager.Instance.Trash)));
         _jokersOnSale.Clear();
+        ShopScene.SetActive(false);
         GameManager.Instance.NextPhase(false);
     }
     public void Reroll()
@@ -103,7 +103,8 @@ public class ShopManager : MonoBehaviour
         CharacterTierData data = _tierStatsData.First(d => d.Tier == GameManager.Instance.CurrentTier);
         foreach(Slot slot in _slots)
         {
-            var jokerPrefab = jokerPrefabs[UnityEngine.Random.Range(0, jokerPrefabs.Count)];
+            var jokerPrefab = jokerPrefabs[Random.Range(0, jokerPrefabs.Count)];
+
             var newJoker = Instantiate(jokerPrefab, slot.TpPoint.position + new Vector3(0, 1, 0), Quaternion.identity);
             slot.IsOccupied = true;
             slot.SlotType = Slot.ESlotType.SHOP_SLOT;

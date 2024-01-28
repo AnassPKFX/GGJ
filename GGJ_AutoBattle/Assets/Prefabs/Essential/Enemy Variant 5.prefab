@@ -12,6 +12,51 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3acf4076b508ce6458d9e139ee01eb4d, type: 2}
+    - target: {fileID: 3859956527323644506, guid: 28fd878f839e23e468bd48016ab5dffe,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0047656465
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859956527323644506, guid: 28fd878f839e23e468bd48016ab5dffe,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.058571
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859956527323644506, guid: 28fd878f839e23e468bd48016ab5dffe,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0014264242
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859956527323644506, guid: 28fd878f839e23e468bd48016ab5dffe,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.17982262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859956527323644506, guid: 28fd878f839e23e468bd48016ab5dffe,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.17982261
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859956527323644506, guid: 28fd878f839e23e468bd48016ab5dffe,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.6838596
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859956527323644506, guid: 28fd878f839e23e468bd48016ab5dffe,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.6838595
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859956527323644506, guid: 28fd878f839e23e468bd48016ab5dffe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3859956527323644506, guid: 28fd878f839e23e468bd48016ab5dffe,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 209.465
+      objectReference: {fileID: 0}
     - target: {fileID: 4529076059666372832, guid: 28fd878f839e23e468bd48016ab5dffe,
         type: 3}
       propertyPath: m_IsActive
@@ -20,7 +65,7 @@ PrefabInstance:
     - target: {fileID: 6068779040139082112, guid: 28fd878f839e23e468bd48016ab5dffe,
         type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Enemy Variant 5
       objectReference: {fileID: 0}
     - target: {fileID: 6068779040139082175, guid: 28fd878f839e23e468bd48016ab5dffe,
         type: 3}
