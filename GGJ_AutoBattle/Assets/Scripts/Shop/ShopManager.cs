@@ -71,18 +71,22 @@ public class ShopManager : MonoBehaviour
     }
     public void Reroll()
     {
-        Money -= 1;
-        AudioReroll.Play();
-        int randChance = Random.Range(0, 100);
-        if(randChance > _rerollFailChance)
+        if (Money > 0)
         {
-            InitSlots(false);
+            Money -= 1;
+            AudioReroll.Play();
+            int randChance = Random.Range(0, 100);
+            if (randChance > _rerollFailChance)
+            {
+                InitSlots(false);
+            }
+            else
+            {
+                InitSlots(true);
+            }
+            _rerollFailChance += GameManager.Instance.GameData.FailChanceIncrement;
         }
-        else
-        {
-            InitSlots(true);
-        }
-        _rerollFailChance += GameManager.Instance.GameData.FailChanceIncrement;
+        
     }
     private void UpdateMoneyUI() => _moneyText.text = _money.ToString();
     private void InitSlots(bool hasRerollFailed)
