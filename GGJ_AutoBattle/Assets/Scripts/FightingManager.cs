@@ -14,7 +14,7 @@ public class FightingManager : MonoBehaviour
     public static FightingManager Instance => _instance;
     private static FightingManager _instance;
 
-    [SerializeField] Enemy enemyPrefab;
+    [SerializeField] List<Enemy> enemyPrefabs;
     [SerializeField] GameObject fightScene;
 
     [SerializeField] List<Slot> _slots;
@@ -169,6 +169,8 @@ public class FightingManager : MonoBehaviour
         //foreach(EnemySlot slot in _enemyslots)
         foreach (Slot slot in _slots)
         {
+            var enemyPrefab = enemyPrefabs[UnityEngine.Random.Range(0, enemyPrefabs.Count)];
+
             var newEnemy = Instantiate(enemyPrefab, slot.TpPoint.position + new Vector3(0, 1, 0), Quaternion.identity);
             //slot.IsOccupied = true;
             var newStats = new JokerStats(GameManager.Instance.GameData.ListCharactersNames[UnityEngine.Random.Range(0, GameManager.Instance.GameData.ListCharactersNames.Count())]);

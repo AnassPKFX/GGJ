@@ -6174,6 +6174,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8984487750520774859, guid: 5784043022e3f664d9b09854e26c9d51,
+        type: 3}
+      propertyPath: jokerPrefabs.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984487750520774859, guid: 5784043022e3f664d9b09854e26c9d51,
+        type: 3}
+      propertyPath: jokerPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1661529459634031063, guid: 618010bd21711c145886b6b235bf726a,
+        type: 3}
+    - target: {fileID: 8984487750520774859, guid: 5784043022e3f664d9b09854e26c9d51,
+        type: 3}
+      propertyPath: jokerPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 7041253908706946413, guid: 02ea6bc399fdb324183a0fe4db946d1f,
+        type: 3}
+    - target: {fileID: 8984487750520774859, guid: 5784043022e3f664d9b09854e26c9d51,
+        type: 3}
+      propertyPath: jokerPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2161165318934659939, guid: 223e3c6419ed5ed4b831434e9d382401,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5784043022e3f664d9b09854e26c9d51, type: 3}
 --- !u!1 &1471003511
@@ -7494,6 +7517,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7728180605192899987, guid: 3c4e8064c34cc794d9876837ab95fb08,
+        type: 3}
+      propertyPath: enemyPrefabs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728180605192899987, guid: 3c4e8064c34cc794d9876837ab95fb08,
+        type: 3}
+      propertyPath: enemyPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 3478650644728537044, guid: 1d023bde405cde34c9de96fcfbd81b0a,
+        type: 3}
+    - target: {fileID: 7728180605192899987, guid: 3c4e8064c34cc794d9876837ab95fb08,
+        type: 3}
+      propertyPath: enemyPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 4497127670556083651, guid: 28fd878f839e23e468bd48016ab5dffe,
+        type: 3}
+    - target: {fileID: 7728180605192899987, guid: 3c4e8064c34cc794d9876837ab95fb08,
+        type: 3}
+      propertyPath: enemyPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 8312610032784964352, guid: 86a988b9937db0c4389d9ca466815ba9,
+        type: 3}
+    - target: {fileID: 7728180605192899987, guid: 3c4e8064c34cc794d9876837ab95fb08,
+        type: 3}
+      propertyPath: enemyPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 4742748831279203523, guid: 1db6623682ab72345ad9f7eb8fddb733,
+        type: 3}
+    - target: {fileID: 7728180605192899987, guid: 3c4e8064c34cc794d9876837ab95fb08,
+        type: 3}
+      propertyPath: enemyPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 6137983028095558877, guid: 0af41eef8393e3842a4fc454fcd9b591,
+        type: 3}
+    - target: {fileID: 7728180605192899987, guid: 3c4e8064c34cc794d9876837ab95fb08,
+        type: 3}
+      propertyPath: enemyPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 3505857632271066482, guid: ebd9c6bf0c95cd34c86bce825df6bc8b,
+        type: 3}
+    - target: {fileID: 7728180605192899987, guid: 3c4e8064c34cc794d9876837ab95fb08,
+        type: 3}
+      propertyPath: enemyPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 1347671050569695452, guid: 2b70e8e868ad54c449b4e0ac4489a2b3,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c4e8064c34cc794d9876837ab95fb08, type: 3}
 --- !u!1 &1666185480
