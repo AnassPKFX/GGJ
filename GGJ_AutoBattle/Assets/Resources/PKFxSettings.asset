@@ -43,6 +43,9 @@ MonoBehaviour:
   - m_Path: Assets/PopcornFXAssets/Particles/joke_failure.pkfx.asset
     m_New: ebee371600e2bfc4e8f645a6516f499f
     m_Old: ebee371600e2bfc4e8f645a6516f499f
+  - m_Path: Assets/PopcornFXAssets/Particles/torch.pkfx.asset
+    m_New: 127b411a3f56b43428cf89783538c3fc
+    m_Old: 127b411a3f56b43428cf89783538c3fc
   m_RenderingCategory: 1
   m_MaterialFactory: {fileID: 11400000, guid: 1de2e57857a05ef4fa945bad700920b4, type: 2}
   m_EnableSoftParticles: 1

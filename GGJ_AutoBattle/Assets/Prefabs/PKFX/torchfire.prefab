@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7951376621059662005
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5723896784463438102}
+  - component: {fileID: 2393638286438411021}
+  m_Layer: 0
+  m_Name: torchfire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5723896784463438102
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7951376621059662005}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.40337908, y: 4.6791387, z: -8.225629}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2393638286438411021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7951376621059662005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5c02dd42880460b914f6e0206b8c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayOnStart: 1
+  m_TriggerAndForget: 0
+  m_KillEffectOnDestroy: 0
+  m_PreWarm: 0
+  m_Events: []
+  m_FxAttributesDesc:
+  - m_Type: 31
+    m_Semantic: 0
+    m_DropMode: 0
+    m_MinMaxFlag: 1
+    m_Name: gobal_scale
+    m_Description: 
+    m_DropNameList: 
+    m_DefaultValue:
+      x:
+        i1: 1065353216
+        f1: 1
+      y:
+        i1: 0
+        f1: 0
+      z:
+        i1: 0
+        f1: 0
+      w:
+        i1: 0
+        f1: 0
+    m_MinValue:
+      x:
+        i1: 1036831949
+        f1: 0.1
+      y:
+        i1: 0
+        f1: 0
+      z:
+        i1: 0
+        f1: 0
+      w:
+        i1: 0
+        f1: 0
+    m_MaxValue:
+      x:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      y:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      z:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      w:
+        i1: 2139095039
+        f1: 3.4028235e+38
+  m_EventDescsHash: 0
+  m_FxAttributesDescHash: -1398738189
+  m_FxAttributesStartValues:
+  - i1: 1065353216
+    f1: 1
+  - i1: 0
+    f1: 0
+  - i1: 0
+    f1: 0
+  - i1: 0
+    f1: 0
+  m_FxSamplersList: []
+  m_FxSamplersDescHash: 371857150
+  m_BoundFx: {fileID: 0}
+  m_FxAsset: {fileID: 11400000, guid: 127b411a3f56b43428cf89783538c3fc, type: 2}
+  m_FxName: Particles/torch.pkfx
