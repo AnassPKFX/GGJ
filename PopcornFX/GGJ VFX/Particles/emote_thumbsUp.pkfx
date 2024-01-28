@@ -6,6 +6,9 @@ CParticleEffect	$D857A09F
 }
 CParticleAttributeList	$35A36C4E
 {
+	AttributeList = {
+		"$EAC9EFF2",
+	};
 }
 CParticleNodeGraph	$4B933A29
 {
@@ -159,6 +162,8 @@ CParticleNodeGraph	$7C2D6FF7
 		"$39AA1D5A",
 		"$AD6B1E20",
 		"$5F0A433D",
+		"$950CC827",
+		"$9DE94B4C",
 	};
 	WorkspaceZoom = -4;
 }
@@ -547,7 +552,7 @@ CParticleNodePinOut	$B049DFA2
 	SelfName = "Value";
 	Owner = "$2CD876DE";
 	ConnectedPins = {
-		"$02A0C63D",
+		"$715F496E",
 	};
 }
 CParticleNodePinIn	$C0AE5923
@@ -1193,7 +1198,7 @@ CParticleNodePinIn	$02A0C63D
 	SelfName = "Value";
 	Owner = "$BC1AB1C2";
 	ConnectedPins = {
-		"$B049DFA2",
+		"$91C16DEE",
 	};
 }
 CParticleNodePinOut	$FBD26A54
@@ -4061,6 +4066,7 @@ CParticleNodeGraph	$CD223609
 		"$C4DB37A6",
 		"$C1F95404",
 		"$5714B11B",
+		"$93CE52B8",
 	};
 	WorkspaceZoom = -4;
 }
@@ -5796,12 +5802,14 @@ CParticleNodeArithmetic	$25972BBD
 	InputPins = {
 		"$B28BD1A9",
 		"$1F28A75F",
+		"$F37EE4A2",
 	};
 	OutputPins = {
 		"$00E99804",
 	};
 	WorkspacePosition = int2(22, 1034);
 	Operation = Mul;
+	InputCount = 3;
 }
 CParticleNodePinIn	$B28BD1A9
 {
@@ -6020,5 +6028,121 @@ CParticleNodePinOut	$5EAFEB24
 	Owner = "$5714B11B";
 	ConnectedPins = {
 		"$91E424A4",
+	};
+}
+CParticleNodeArithmetic	$950CC827
+{
+	InputPins = {
+		"$715F496E",
+		"$D4ED9FC8",
+	};
+	OutputPins = {
+		"$91C16DEE",
+	};
+	WorkspacePosition = int2(-66, 1034);
+	Operation = Mul;
+}
+CParticleNodePinIn	$715F496E
+{
+	SelfName = "Value";
+	Owner = "$950CC827";
+	ConnectedPins = {
+		"$B049DFA2",
+	};
+}
+CParticleNodePinIn	$D4ED9FC8
+{
+	SelfName = "ValueB";
+	Owner = "$950CC827";
+	ConnectedPins = {
+		"$1C3666F2",
+	};
+}
+CParticleNodePinOut	$91C16DEE
+{
+	SelfName = "Value";
+	Owner = "$950CC827";
+	ConnectedPins = {
+		"$02A0C63D",
+	};
+}
+CParticleAttributeDeclaration	$EAC9EFF2
+{
+	ExportedName = "global_scale";
+	HasMin = true;
+	DefaultValueF4 = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+	MinValueF4 = float4(1.0000000e-01, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+	Pinned = true;
+}
+CParticleNodeTemplateExport	$9DE94B4C
+{
+	ExecStage = Evolve;
+	InputPins = {
+		"$4DF1E01D",
+	};
+	OutputPins = {
+		"$1C3666F2",
+	};
+	WorkspacePosition = int2(-462, 1232);
+	ExportedName = "global_scale";
+	ExportedType = float;
+	Type = Input;
+	InputType = Attribute;
+	HasMin = true;
+	DefaultValueF4 = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+	MinValueF4 = float4(1.0000000e-01, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$4DF1E01D
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$9DE94B4C";
+}
+CParticleNodePinOut	$1C3666F2
+{
+	SelfName = "Value";
+	Owner = "$9DE94B4C";
+	ConnectedPins = {
+		"$D4ED9FC8",
+	};
+}
+CParticleNodeTemplateExport	$93CE52B8
+{
+	ExecStage = Evolve;
+	InputPins = {
+		"$8811DF13",
+	};
+	OutputPins = {
+		"$5F65A9B3",
+	};
+	WorkspacePosition = int2(-264, 1320);
+	ExportedName = "global_scale";
+	ExportedType = float;
+	Type = Input;
+	InputType = Attribute;
+	HasMin = true;
+	DefaultValueF4 = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+	MinValueF4 = float4(1.0000000e-01, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$8811DF13
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$93CE52B8";
+}
+CParticleNodePinOut	$5F65A9B3
+{
+	SelfName = "Value";
+	Owner = "$93CE52B8";
+	ConnectedPins = {
+		"$F37EE4A2",
+	};
+}
+CParticleNodePinIn	$F37EE4A2
+{
+	SelfName = "Value3";
+	Owner = "$25972BBD";
+	ConnectedPins = {
+		"$5F65A9B3",
 	};
 }

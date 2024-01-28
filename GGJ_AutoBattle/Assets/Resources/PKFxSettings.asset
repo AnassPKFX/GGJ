@@ -44,7 +44,7 @@ MonoBehaviour:
     m_New: ebee371600e2bfc4e8f645a6516f499f
     m_Old: ebee371600e2bfc4e8f645a6516f499f
   m_RenderingCategory: 1
-  m_MaterialFactory: {fileID: 11400000, guid: 74688adbe42c0844e9542a04afffdf07, type: 2}
+  m_MaterialFactory: {fileID: 11400000, guid: 1de2e57857a05ef4fa945bad700920b4, type: 2}
   m_EnableSoftParticles: 1
   m_DisableDynamicEffectBounds: 0
   m_UseApplicationAudioLoopback: 0
@@ -249,8 +249,8 @@ MonoBehaviour:
       m_Extent: {x: 50, y: 50, z: 50}
   - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs  Content/Textures/circle.png
       (none) (none) (none) (none) (none) (none) (none) 1 0
-    m_DefaultVertexBufferSize: 591
-    m_DefaultIndexBufferSize: 1155
+    m_DefaultVertexBufferSize: 1890
+    m_DefaultIndexBufferSize: 2883
     m_StaticWorldBounds:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 50, y: 50, z: 50}
@@ -291,8 +291,8 @@ MonoBehaviour:
       m_Extent: {x: 50, y: 50, z: 50}
   - m_GeneratedName: Billboard  Color Diffuse  AlphaBlend UVs RGBOnly Content/Textures/circle.png
       (none) (none) (none) (none) (none) (none) (none) 1 0
-    m_DefaultVertexBufferSize: 606
-    m_DefaultIndexBufferSize: 1155
+    m_DefaultVertexBufferSize: 1872
+    m_DefaultIndexBufferSize: 2847
     m_StaticWorldBounds:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 50, y: 50, z: 50}
