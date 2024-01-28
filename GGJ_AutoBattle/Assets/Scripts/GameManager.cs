@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
 using static GameData;
@@ -17,13 +18,22 @@ public class GameManager : MonoBehaviour
     public int NumberOfSlots => _numberOfSlots;
     private int _numberOfSlots;
 
-    public int Money => _money;
-    private int _money;
     public int RoundCount => _roundCount;
     private int _roundCount;
 
     public EGamePhase GamePhase => _gamePhase;
     private EGamePhase _gamePhase;
+
+    public CharacterTierData.ETier CurrentTier => _currentTier;
+    private CharacterTierData.ETier _currentTier;
+    public EnemyData.ETurn CurrentTurn => _currentTurn;
+    private EnemyData.ETurn _currentTurn;
+
+    public List<Joker> Team {get => _team; set=> _team = value; }
+    private List<Joker> _team = new();
+
+    public Movable CurrentDraggedMovable{get => _currentDraggedEntity; set=> _currentDraggedEntity = value; }
+    private Movable _currentDraggedEntity;
 
     public GameData GameData => _gameData;
 
@@ -33,6 +43,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Stats")]
     [SerializeField]
     GameData _gameData;
+
 
     private enum EUpgradeType
     {
@@ -57,13 +68,16 @@ public class GameManager : MonoBehaviour
         Debug.Log("<color=magenta> Round starting : " + ((int)_roundCount + 1) + "</color>");
 
     }
+    
 
     private void InitGameStats()
     {
         _numberOfSlots = _gameData.NumberOfSlotsStart;
-        _money = _gameData.MoneyStart;
         _roundCount = 0;
         _gamePhase = EGamePhase.START;
+        _currentTier = CharacterTierData.ETier.TIER_1;
+        _currentTurn = EnemyData.ETurn.TURN_1;
+
         List<HumourTypeData> humourTypeDatas = Resources.LoadAll<HumourTypeData>("Data/HumourTypeData").ToList();
         foreach(var htd in humourTypeDatas)
         {
@@ -82,7 +96,7 @@ public class GameManager : MonoBehaviour
                 return;
             case EUpgradeType.ADD_MONEY:
                 Debug.Log("<color=yellow> Upgrade : ADD_MONEY</color>");
-                _money += UnityEngine.Random.Range(_gameData.MoneyUpgradeMin, _gameData.MoneyUpgradeMax);
+                ShopManager.Instance.Money += UnityEngine.Random.Range(_gameData.MoneyUpgradeMin, _gameData.MoneyUpgradeMax);
                 return;
             case EUpgradeType.ADD_STATS:
                 Debug.Log("<color=yellow> Upgrade : ADD_STATS</color>");
@@ -100,12 +114,34 @@ public class GameManager : MonoBehaviour
             if (_gamePhase == EGamePhase.UPGRADE && _roundCount < _gameData.TotalRoundCount-1)
             {
                 _gamePhase = EGamePhase.SHOP;
-                _roundCount++;
-                Debug.Log("<color=magenta> Round starting : " + ((int)_roundCount+1) + "</color>");
+
+                _currentTier = CharacterTierData.ETier.TIER_1;
+
+
             }
             else
             {
                 _gamePhase = (EGamePhase)(((int)_gamePhase+1) % 5);
+            }
+            Debug.Log("<color=magenta> Round starting : " + ((int)_roundCount+1) + "</color>");
+            
+            _currentTurn = (EnemyData.ETurn)(((int)_currentTurn + 1) % 7);
+            _roundCount++;
+            switch (_currentTurn)
+            {
+                case EnemyData.ETurn.TURN_1:
+                case EnemyData.ETurn.TURN_2:
+                    _currentTier = CharacterTierData.ETier.TIER_1;
+                    break;
+                case EnemyData.ETurn.TURN_3:
+                case EnemyData.ETurn.TURN_4:
+                    _currentTier = CharacterTierData.ETier.TIER_2;
+                    break;
+                case EnemyData.ETurn.TURN_5:
+                case EnemyData.ETurn.TURN_6:
+                case EnemyData.ETurn.TURN_7:
+                    _currentTier = CharacterTierData.ETier.TIER_3;
+                    break;
             }
         }
         LaunchNextPhase(_gamePhase);
@@ -121,7 +157,7 @@ public class GameManager : MonoBehaviour
                 //Not supposed to happen
                 return;
             case EGamePhase.SHOP:
-                // TO DO
+                ShopManager.Instance.StartShopPhase();
                 return;
             case EGamePhase.FIGHT:
                 // TO DO
@@ -131,6 +167,8 @@ public class GameManager : MonoBehaviour
                 return;
             case EGamePhase.END:
                 _roundCount = 0;
+                _currentTurn = EnemyData.ETurn.TURN_1;
+
                 Debug.Log("<color=cyan> GAME END </color>");
 
                 NextPhase(false);

@@ -25,11 +25,14 @@ public class GameData : ScriptableObject
 
     public int TotalRoundCount => _totalRoundCount;
     public int AddedMoneyPerTurn => _addedMoneyPerTurn;
+    public List<string> ListCharactersNames => _listCharactersNames;
     [Header("--- Core ---")]
     [SerializeField]
     private int _totalRoundCount = 7;
     [SerializeField]
     private int _addedMoneyPerTurn = 15;
+    [SerializeField]
+    private List<string> _listCharactersNames;
 
     public float MultiplierPriceFromStats => _multiplierPriceFromStats;
     [Header("-- Shop")]
@@ -58,4 +61,5 @@ public class GameData : ScriptableObject
     private int _moneyUpgradeMin = 5;
     [SerializeField]
     private int _moneyUpgradeMax = 10;
+
 }
