@@ -8,7 +8,7 @@ using UnityEngine.Playables;
 public class ShopManager : MonoBehaviour
 {
     [SerializeField] GameObject ShopScene;
-    [SerializeField] Joker jokerPrefab;
+    [SerializeField] List<Joker> jokerPrefabs;
     [SerializeField] List<Slot> _slots;
     [Header("UI")]
     [SerializeField]
@@ -103,6 +103,8 @@ public class ShopManager : MonoBehaviour
         CharacterTierData data = _tierStatsData.First(d => d.Tier == GameManager.Instance.CurrentTier);
         foreach(Slot slot in _slots)
         {
+            var jokerPrefab = jokerPrefabs[Random.Range(0, jokerPrefabs.Count)];
+
             var newJoker = Instantiate(jokerPrefab, slot.TpPoint.position + new Vector3(0, 1, 0), Quaternion.identity);
             slot.IsOccupied = true;
             slot.SlotType = Slot.ESlotType.SHOP_SLOT;

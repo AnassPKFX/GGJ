@@ -204,8 +204,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e71072914129b8741a5d289ff32689ee, type: 2}
+  m_sharedMaterial: {fileID: 2632803875476221132, guid: e71072914129b8741a5d289ff32689ee,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -473,8 +474,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Try Again
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e71072914129b8741a5d289ff32689ee, type: 2}
+  m_sharedMaterial: {fileID: 2632803875476221132, guid: e71072914129b8741a5d289ff32689ee,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -710,8 +712,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: + STATS
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e71072914129b8741a5d289ff32689ee, type: 2}
+  m_sharedMaterial: {fileID: 2632803875476221132, guid: e71072914129b8741a5d289ff32689ee,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1163,8 +1166,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e71072914129b8741a5d289ff32689ee, type: 2}
+  m_sharedMaterial: {fileID: 2632803875476221132, guid: e71072914129b8741a5d289ff32689ee,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1298,8 +1302,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'You Lose ! '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e71072914129b8741a5d289ff32689ee, type: 2}
+  m_sharedMaterial: {fileID: 2632803875476221132, guid: e71072914129b8741a5d289ff32689ee,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1637,6 +1642,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8228506135400681872}
     m_Modifications:
+    - target: {fileID: 1014382638368444155, guid: c01586423fcdfeb47a8de40f9fcb7bf9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.49
+      objectReference: {fileID: 0}
     - target: {fileID: 1014382638832269270, guid: c01586423fcdfeb47a8de40f9fcb7bf9,
         type: 3}
       propertyPath: m_Name
@@ -1654,18 +1664,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1014382638832269274, guid: c01586423fcdfeb47a8de40f9fcb7bf9,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2769
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014382638832269274, guid: c01586423fcdfeb47a8de40f9fcb7bf9,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2769
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014382638832269274, guid: c01586423fcdfeb47a8de40f9fcb7bf9,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2769
+      objectReference: {fileID: 0}
+    - target: {fileID: 1014382638832269274, guid: c01586423fcdfeb47a8de40f9fcb7bf9,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.836893
+      value: -9.26
       objectReference: {fileID: 0}
     - target: {fileID: 1014382638832269274, guid: c01586423fcdfeb47a8de40f9fcb7bf9,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.09666294
+      value: -0.22601
       objectReference: {fileID: 0}
     - target: {fileID: 1014382638832269274, guid: c01586423fcdfeb47a8de40f9fcb7bf9,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.5624895
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 1014382638832269274, guid: c01586423fcdfeb47a8de40f9fcb7bf9,
         type: 3}
@@ -1702,6 +1727,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3955422671815822915, guid: c01586423fcdfeb47a8de40f9fcb7bf9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c8ef964457c6e6b4299fa455a73625eb, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c01586423fcdfeb47a8de40f9fcb7bf9, type: 3}
 --- !u!4 &8872977249169099924 stripped
