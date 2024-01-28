@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: _slotType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1342909483267609670, guid: e8ec4fb269670d54d911222269774ef2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.612
+      objectReference: {fileID: 0}
     - target: {fileID: 1342909483595961653, guid: e8ec4fb269670d54d911222269774ef2,
         type: 3}
       propertyPath: m_RootOrder

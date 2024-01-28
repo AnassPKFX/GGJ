@@ -21,7 +21,7 @@ public class FightingManager : MonoBehaviour
 
     private List<EnemyData> _turnStatsData;
 
-    public void Start()
+    public void Awake()
     {
         _turnStatsData = Resources.LoadAll<EnemyData>("Data/Characters/Enemies").ToList();
         _instance = this;
