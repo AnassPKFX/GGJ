@@ -21,19 +21,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_Scroll
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: fe5c89fc683e29d498ea2a1b38166916,
+    type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - PK_HAS_EMISSIVE_NONE
-  - PK_HAS_EMISSIVE_NONE_ON
-  - PK_HAS_VAT_NONE
-  - PK_HAS_VAT_NONE_ON
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: 3500
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -112,9 +108,14 @@ Material:
     - _GlossyReflections: 0
     - _Metallic: 0
     - _OcclusionStrength: 1
+    - _Offset: 0
+    - _Outline_Tickness: 0.321
     - _Parallax: 0.005
+    - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Saturate: 0
+    - _Sharpness: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -125,6 +126,9 @@ Material:
     m_Colors:
     - _BaseColor: {r: 0.764151, g: 0.51415956, b: 0.06127627, a: 1}
     - _Color: {r: 0.764151, g: 0.5141595, b: 0.061276242, a: 1}
+    - _Color1: {r: 0.5943396, g: 0.33591804, b: 0.025231387, a: 0}
+    - _Color2: {r: 0.5566038, g: 0.2234948, b: 0.023629395, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.8962264, g: 0.4815326, b: 0.07186722, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
