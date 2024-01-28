@@ -6,7 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class Enemy : EnemyMovable
+public class EnemyGen : EnemyMovable
 {
 
     public void InitStats(EnemyStats newStats)
