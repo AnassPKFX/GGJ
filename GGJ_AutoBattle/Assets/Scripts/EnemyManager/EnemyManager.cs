@@ -7,7 +7,7 @@ using UnityEngine.Playables;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] Enemy enemyPrefab;
+    [SerializeField] EnemyGen enemyPrefab;
     [SerializeField] List<EnemySlot> _enemySlots;
 
     public static EnemyManager Instance => _instance;
