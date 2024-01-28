@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using static GameData;
 using static GameManager;
+using static JokerStats;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,20 +33,30 @@ public class GameManager : MonoBehaviour
     public List<Joker> Team {get => _team; set=> _team = value; }
     private List<Joker> _team = new();
 
+    public List<Enemy> EnemyTeam { get => _enemyTeam; set => _enemyTeam = value; }
+    private List<Enemy> _enemyTeam = new();
+
     public Movable CurrentDraggedMovable{get => _currentDraggedEntity; set=> _currentDraggedEntity = value; }
     private Movable _currentDraggedEntity;
 
     public GameData GameData => _gameData;
 
+    public Slot Trash => _trash;
+    [SerializeField]
+    private Slot _trash;
+    public List<HumourTypeData> HumourTypeDatas => _humourTypeDatas;
+    List<HumourTypeData> _humourTypeDatas = new();
+
+    public bool CanMoveEntities = true; 
     public Dictionary<EHumourType, HumourTypeData> HumourTypeDict { get => _humourTypeDict; set => _humourTypeDict = value; }
-    private Dictionary<EHumourType, HumourTypeData> _humourTypeDict;
+    private Dictionary<EHumourType, HumourTypeData> _humourTypeDict = new();
 
     [Header("Game Stats")]
     [SerializeField]
     GameData _gameData;
 
 
-    private enum EUpgradeType
+    public enum EUpgradeType
     {
         ADD_SLOTS,
         ADD_MONEY,
@@ -78,16 +89,20 @@ public class GameManager : MonoBehaviour
         _currentTier = CharacterTierData.ETier.TIER_1;
         _currentTurn = EnemyData.ETurn.TURN_1;
 
-        List<HumourTypeData> humourTypeDatas = Resources.LoadAll<HumourTypeData>("Data/HumourTypeData").ToList();
-        foreach(var htd in humourTypeDatas)
+        _humourTypeDatas = Resources.LoadAll<HumourTypeData>("Data/HumourTypeDatas").ToList();
+        foreach(var htd in _humourTypeDatas)
         {
+            Debug.Log(htd.DisplayName.ToString());
             _humourTypeDict.Add(htd.HumourType, htd);
         }
     }
-
-    public void UpgradeStatsRandom()
+    public void UpgradeSlots() => Upgrade(EUpgradeType.ADD_SLOTS);
+    public void UpgradeMoney() => Upgrade(EUpgradeType.ADD_MONEY);
+    public void UpgradeStats() => Upgrade(EUpgradeType.ADD_STATS);
+    public void Upgrade(EUpgradeType upgradeType)
     {
-        EUpgradeType upgradeType = (EUpgradeType)UnityEngine.Random.Range(0, 2);
+        //EUpgradeType upgradeType = (EUpgradeType)UnityEngine.Random.Range(0, 2);
+        StartCoroutine(UpgradeManager.Instance.StopUpgradePhase(upgradeType));
         switch (upgradeType)
         {
             case EUpgradeType.ADD_SLOTS:
@@ -100,9 +115,20 @@ public class GameManager : MonoBehaviour
                 return;
             case EUpgradeType.ADD_STATS:
                 Debug.Log("<color=yellow> Upgrade : ADD_STATS</color>");
-                // TO DO
+                foreach(var j in Team)
+                {
+                    var newStats = new JokerStats(j.name);
+
+                    for (int i = 0; i < newStats.HumourStats.Count; i++)
+                    {
+                        int newStat = j.JokerStats.HumourStats[i].Value;
+                        newStats.HumourStats[i] = new(newStats.HumourStats[i].Key, newStat++);
+                    }
+                    j.InitStats(newStats);
+                }
                 return;
         }
+
     }
 
     public void NextPhase(bool lose)
@@ -155,17 +181,24 @@ public class GameManager : MonoBehaviour
         {
             case EGamePhase.START:
                 //Not supposed to happen
+                CanMoveEntities = false;
                 return;
             case EGamePhase.SHOP:
+                CanMoveEntities = true;
                 ShopManager.Instance.StartShopPhase();
                 return;
             case EGamePhase.FIGHT:
+                CanMoveEntities = false;
                 // TO DO
                 return;  
             case EGamePhase.UPGRADE:
-                UpgradeStatsRandom();
+                CanMoveEntities = false;
+
+                UpgradeManager.Instance.StartUpgradePhase();
                 return;
             case EGamePhase.END:
+                CanMoveEntities = false;
+
                 _roundCount = 0;
                 _currentTurn = EnemyData.ETurn.TURN_1;
 

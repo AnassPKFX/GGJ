@@ -21,21 +21,37 @@ public class Joker : Movable
     public TMP_Text PriceText => _priceText;
     [SerializeField]
     private TMP_Text _priceText;
+    [SerializeField]
+    private TMP_Text _darkHumour;
+    [SerializeField]
+    private TMP_Text _imitation;
+    [SerializeField]
+    private TMP_Text _jokes;
 
 
-    public void InitStats(JokerStats newStats)
+    private void Start()
     {
+        
         _status = EStatus.UNBOUGHT;
-        _jokerStats = newStats;
-  
+    }
+    public override void InitStats(JokerStats newStats)
+    {
+        base.InitStats(newStats);
+
         _price = (int)(_jokerStats.HumourStats.Select(d => d.Value).Sum() * GameManager.Instance.GameData.MultiplierPriceFromStats);
-        _priceText.text = _price.ToString();
+        _priceText.text = _price.ToString() + "$";
+        //Debug.Log(newStats.HumourStats[0].Key);
+        //GameManager.Instance.HumourTypeDatas.ForEach(k => Debug.Log(k.HumourType));
+        _darkHumour.text = GameManager.Instance.HumourTypeDatas.First(k => k.HumourType == newStats.HumourStats[0].Key).DisplayName + " : " + newStats.HumourStats[0].Value.ToString();
+        _imitation.text = GameManager.Instance.HumourTypeDatas.First(k => k.HumourType == newStats.HumourStats[1].Key).DisplayName + " : " + newStats.HumourStats[1].Value.ToString();
+        _jokes.text = GameManager.Instance.HumourTypeDatas.First(k => k.HumourType == newStats.HumourStats[2].Key).DisplayName + " : " + newStats.HumourStats[2].Value.ToString();
+
     }
 
     protected override bool AnalyseNewSlot(Slot newSlot)
     {
-        base.AnalyseNewSlot(newSlot);
-        if (newSlot.IsOccupied && _canBeMoved)
+        //base.AnalyseNewSlot(newSlot);
+        if (newSlot.IsOccupied)
         {
             Debug.Log("newSlot.IsOccupied && _canBeMoved", newSlot.gameObject);
             _c = StartCoroutine(MoveToSlot(_slotBase));
@@ -45,10 +61,20 @@ public class Joker : Movable
         {
             default:
             case Slot.ESlotType.SHOP_SLOT:
-                return false;
+                if (_status == EStatus.UNBOUGHT)
+                    return true;
+                else
+                    return false;
             case Slot.ESlotType.TRASH_SLOT:
-                GameManager.Instance.Team.Remove(this);
-                Destroy(gameObject);
+                if(_status == EStatus.UNBOUGHT)
+                {
+                    ShopManager.Instance.JokersOnSale.Remove(this);
+                }
+                else
+                {
+                    GameManager.Instance.Team.Remove(this);
+                }
+                StartCoroutine(Die());
                 return true;
             case Slot.ESlotType.TEAM_SLOT:
                 if (_status == EStatus.TEAMMATE)
@@ -57,8 +83,8 @@ public class Joker : Movable
                 {
                     _status = EStatus.TEAMMATE;
                     ShopManager.Instance.Money -= _price;
-                    Debug.Log(this);
-                    Debug.Log(GameManager.Instance);
+                    ShopManager.Instance.JokersOnSale.Remove(this);
+
                     GameManager.Instance.Team.Add(this);
                     _priceText.gameObject.SetActive(false);
                     return true;
