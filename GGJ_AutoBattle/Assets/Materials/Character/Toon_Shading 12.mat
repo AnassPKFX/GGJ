@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Toon_Shading 17
+  m_Name: Toon_Shading 12
   m_Shader: {fileID: -6465566751694194690, guid: fe5c89fc683e29d498ea2a1b38166916,
     type: 3}
   m_ValidKeywords: []
@@ -22,7 +22,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2b185a2018da8044ea82fe3b2c56de3b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 01d5fa0ef8371504d8d08e91dd92d36f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2D_68f1dbfc1bcc47e89ff1cebfd9842220_Texture_1:
@@ -46,15 +46,15 @@ Material:
     - _DotsDensity: 100
     - _FirstColor: 0.05
     - _Offset: 0.27
-    - _Outline_Tickness: 1
+    - _Outline_Tickness: 0.87
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Saturate: 0
     - _Shadow_treshold: 0.31
     - _Sharpness: 0
     m_Colors:
-    - _Color1: {r: 0.7264151, g: 0.10550818, b: 0.099368125, a: 1}
-    - _Color2: {r: 2.297397, g: 1.2973536, b: 0, a: 1}
+    - _Color1: {r: 1, g: 0.3501048, b: 0.2688679, a: 1}
+    - _Color2: {r: 1, g: 0.910417, b: 0.4669811, a: 1}
     - _OutlineColor: {r: 0.009433985, g: 0.009433985, b: 0.009433985, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &4727958970673863602
