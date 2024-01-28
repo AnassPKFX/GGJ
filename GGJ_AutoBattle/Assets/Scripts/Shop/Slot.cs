@@ -13,7 +13,8 @@ public class Slot : MonoBehaviour
     {
         SHOP_SLOT,
         TEAM_SLOT,
-        TRASH_SLOT
+        TRASH_SLOT,
+        ENEMY_SLOT
     }
     public ESlotType SlotType { get => _slotType; set => _slotType = value; }
     [SerializeField]

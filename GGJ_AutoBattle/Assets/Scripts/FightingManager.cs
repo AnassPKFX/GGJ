@@ -13,135 +13,165 @@ public class FightingManager : MonoBehaviour
     private HumourTypeData themeChosen;
     public static FightingManager Instance => _instance;
     private static FightingManager _instance;
-    private void Start()
+
+    [SerializeField] Enemy enemyPrefab;
+    [SerializeField] GameObject fightScene;
+
+    [SerializeField] List<Slot> _slots;
+
+    private List<EnemyData> _turnStatsData;
+
+    public void Start()
     {
+        _turnStatsData = Resources.LoadAll<EnemyData>("Data/Characters/Enemies").ToList();
         _instance = this;
+        fightScene.SetActive(false);
+
     }
 
     public void StartFight()
     {
-        if (Fight())
-        {
-            Debug.Log("Victoire");
-        }
-        else
-        {
-            Debug.Log("Défaite");
-        }
-    }
-
-    bool Fight()
-    {
-        //Le player choisit son personnage
-        if (GameManager.Instance.Team.Any())
-        {
-            charaSend = GameManager.Instance.Team[Random.Range(0, GameManager.Instance.Team.Count)];
-            Debug.Log("Joueur choisit : " + charaSend);
-        }
-        else
-        {
-            GameManager.Instance.EnemyTeam.Clear();
-            return true;
-        }
-
-        //L'ennemi est choisi de gauche à droite et condition de victoire:
-        if (GameManager.Instance.EnemyTeam.Any())
-        {
-            enemySend = GameManager.Instance.EnemyTeam[0];
-            Debug.Log("Ennemi : " + enemySend);
-        }
-
-        else
-        {
-            return false;
-        }
-
+        InitSlots();
+        fightScene.SetActive(true);
         StartCoroutine(AutoBattle());
 
-        //Les personnages s'avancent
-        //Le thème se choisit
-        var randomKey = GameManager.Instance.HumourTypeDict.Keys.ElementAt((int)Random.Range(0, GameManager.Instance.HumourTypeDict.Keys.Count - 1));
-        themeChosen = GameManager.Instance.HumourTypeDict[randomKey];
-        Debug.Log("The King chooses the theme : " + themeChosen.DisplayName);
 
-        if (GameManager.Instance.Team.Any())
-        {
-            GameManager.Instance.EnemyTeam.Clear();
-            return true;
-        }
-        if (GameManager.Instance.EnemyTeam.Any())
-        {
-            return false;
-        }
-        return false;
     }
 
     IEnumerator AutoBattle()
     {
 
-        //Le "combat" commence
-        bool fight = true;
-        while (fight == true)
+        while (GameManager.Instance.Team.Any() && GameManager.Instance.EnemyTeam.Any())
         {
-            yield return new WaitForSeconds(1);
-            bool testJoueur = false;
-            bool testEnnemi = false;
+            //CHANGE DUEL -----------
 
-            //La blague a-t-elle fonctionné ? -- Joueur 
-            //Récupération de la caractéristique Joueur
-            int caractJoueur = 5; //Arbitraire A CHANGER
-            int y = Random.Range(0, 10);
-
-            if (caractJoueur >= y)
+            if (GameManager.Instance.Team.Any())
             {
-                Debug.Log("La blague a fonctionnée");
-                testJoueur = true;
-            }
-            else
-            {
-                Debug.Log("La blague n'a pas fonctionnée");
+                charaSend = GameManager.Instance.Team[Random.Range(0, GameManager.Instance.Team.Count)];
             }
 
-            //La blague a-t-elle fonctionné ? -- Ennemi 
-            //Récupération de la caractéristique Ennemi
-            int caractEnnemi = 5; //Arbitraire A CHANGER
-            y = Random.Range(0, 10);
-
-            if (caractEnnemi >= y)
+            if (GameManager.Instance.EnemyTeam.Any())
             {
-                Debug.Log("La blague ennemie a fonctionnée");
-                testEnnemi = true;
-            }
-            else
-            {
-                Debug.Log("La blague ennemie n'a pas fonctionnée");
+                enemySend = GameManager.Instance.EnemyTeam[0];
             }
 
-            //Résultats 
-            if (testJoueur && !testEnnemi)
+            var randomTheme = GameManager.Instance.HumourTypeDict.Keys.ElementAt((int)Random.Range(0, GameManager.Instance.HumourTypeDict.Keys.Count - 1));
+            themeChosen = GameManager.Instance.HumourTypeDict[randomTheme];
+            Debug.Log("The King chooses the theme : " + themeChosen.DisplayName);
+
+
+            bool equality = true;
+
+            while (equality)
             {
-                LoseTurn(enemySend);
-                fight = false;
-                //Le personnage adverse est éliminé.
+                //LANCEER BLAGUE -------------
+
+                yield return new WaitForSeconds(1);
+                bool testJoueur = false;
+                bool testEnnemi = false;
+
+                int limitWinJoke = 5; 
+                int y = Random.Range(0, 10);
+
+                if (y >= limitWinJoke)
+                {
+                    Debug.Log("La blague a fonctionnée");
+                    testJoueur = true;
+                }
+                else
+                {
+                    Debug.Log("La blague n'a pas fonctionnée");
+                }
+
+                //La blague a-t-elle fonctionné ? -- Ennemi 
+                //Récupération de la caractéristique Ennemi
+                limitWinJoke = 5; //Arbitraire A CHANGER
+                y = Random.Range(0, 10);
+
+                if (y >= limitWinJoke)
+                {
+                    Debug.Log("La blague ennemie a fonctionnée");
+                    testEnnemi = true;
+                }
+                else
+                {
+                    Debug.Log("La blague ennemie n'a pas fonctionnée");
+                }
+
+                //Résultats 
+                if (testJoueur && !testEnnemi)
+                {
+                    GameManager.Instance.EnemyTeam.Remove((Enemy)enemySend);
+
+                    LoseTurn(enemySend);
+                    equality = false;
+
+                    //Le personnage adverse est éliminé.
+                }
+                else if (!testJoueur && testEnnemi)
+                {
+                    GameManager.Instance.Team.Remove((Joker)charaSend);
+                    LoseTurn(charaSend);
+                    //Notre personnage est éliminé.
+                    equality = false;
+                }
+                else
+                {
+                    Debug.Log("Egalité");
+                }
             }
-            else if (!testJoueur && testEnnemi)
-            {
-                LoseTurn(charaSend);
-                fight = false;
-                //Notre personnage est éliminé.
-            }
-            else
-            {
-                Debug.Log("Egalité");
-            }
-            if (!GameManager.Instance.Team.Any() || !GameManager.Instance.EnemyTeam.Any())
-            {
-                yield break;
-            }
+
         }
+
+        fightScene.SetActive(false);
+
+        if (GameManager.Instance.Team.Any())
+        {
+            GameManager.Instance.EnemyTeam.ForEach(x => x.transform.GetComponent<Collider>().enabled = false);
+            GameManager.Instance.EnemyTeam.ForEach(x => StartCoroutine(x.MoveToSlot(GameManager.Instance.Trash)));
+            GameManager.Instance.EnemyTeam.Clear();
+            Debug.Log("Victoire");
+            GameManager.Instance.NextPhase(false);
+        }
+        if (GameManager.Instance.EnemyTeam.Any())
+        {
+            Debug.Log("Défaite");
+            GameManager.Instance.NextPhase(true);
+        }
+
     }
     void LoseTurn(Movable joker)
     {
         StartCoroutine(joker.MoveToSlot(GameManager.Instance.Trash));
+    }
+
+    private void InitSlots()
+    {
+        EnemyData data = _turnStatsData.First(d => d.Turn == GameManager.Instance.CurrentTurn);
+        //foreach(EnemySlot slot in _enemyslots)
+        foreach (Slot slot in _slots)
+        {
+            var newEnemy = Instantiate(enemyPrefab, slot.TpPoint.position + new Vector3(0, 1, 0), Quaternion.identity);
+            //slot.IsOccupied = true;
+            var newStats = new JokerStats(GameManager.Instance.GameData.ListCharactersNames[UnityEngine.Random.Range(0, GameManager.Instance.GameData.ListCharactersNames.Count())]);
+            slot.IsOccupied = true;
+            slot.SlotType = Slot.ESlotType.ENEMY_SLOT;
+
+            int countPoint = 0;
+            for (int j = 0; j < newStats.HumourStats.Count; j++)
+            {
+                //Mettre les valeurs comme ci-dessous
+                int randStats = Random.Range(0, data.MaxStatPerCategory);
+                if (countPoint + randStats > data.MaxStatPerCharacter)
+                    randStats = Random.Range(0, data.MaxStatPerCategory - countPoint);
+
+                newStats.HumourStats[j] = new(newStats.HumourStats[j].Key, randStats);
+                countPoint += randStats;
+                //Debug.Log(randStats);
+            }
+            newEnemy.SlotBase = slot;
+            newEnemy.InitStats(newStats);
+            GameManager.Instance.EnemyTeam.Add(newEnemy);
+        }
     }
 }

@@ -42,23 +42,31 @@ public class ShopManager : MonoBehaviour
     private List<CharacterTierData> _tierStatsData;
     float _rerollFailChance;
 
+    AudioSource AudioReroll;
+
     void Start()
     {
+        AudioReroll = GetComponent<AudioSource>();
         _instance = this;
         ShopScene.SetActive(false);
         _tierStatsData = Resources.LoadAll<CharacterTierData>("Data/Characters/PlayerCharacters").ToList();
-        Money = GameManager.Instance.GameData.MoneyStart;
+        Money = 0;
 
     }
 
     public void StartShopPhase()
     {
         ShopScene.SetActive(true);
+        Money += GameManager.Instance.GameData.MoneyStart ;
         _rerollFailChance = GameManager.Instance.GameData.StartFailChancePercentage;
         InitSlots(false);
     }
     public void StopShopPhase()
     {
+        StartCoroutine(Wait(1.5f));
+    }
+    IEnumerator Wait(float t) { 
+        yield return new WaitForSeconds(t);
         _jokersOnSale.ForEach(x => x.transform.GetComponent<Collider>().enabled = false);
         _jokersOnSale.ForEach(x => StartCoroutine(x.MoveToSlot(GameManager.Instance.Trash)));
         _jokersOnSale.Clear();
@@ -67,16 +75,22 @@ public class ShopManager : MonoBehaviour
     }
     public void Reroll()
     {
-        int randChance = Random.Range(0, 100);
-        if(randChance > _rerollFailChance)
+        if (Money > 0)
         {
-            InitSlots(false);
+            Money -= 1;
+            AudioReroll.Play();
+            int randChance = Random.Range(0, 100);
+            if (randChance > _rerollFailChance)
+            {
+                InitSlots(false);
+            }
+            else
+            {
+                InitSlots(true);
+            }
+            _rerollFailChance += GameManager.Instance.GameData.FailChanceIncrement;
         }
-        else
-        {
-            InitSlots(true);
-        }
-        _rerollFailChance += GameManager.Instance.GameData.FailChanceIncrement;
+        
     }
     private void UpdateMoneyUI() => _moneyText.text = _money.ToString();
     private void InitSlots(bool hasRerollFailed)

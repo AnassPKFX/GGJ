@@ -678,6 +678,7 @@ CParticleNodePinIn	$6F7075CD
 	Visible = false;
 	Owner = "$FD77D768";
 	BaseType = int;
+	ValueI = int4(-5, 0, 0, 0);
 }
 CParticleNodePinIn	$ACA39E69
 {
@@ -2264,6 +2265,7 @@ CParticleNodePinIn	$D23C10C3
 	Visible = false;
 	Owner = "$F146D3CF";
 	BaseType = int;
+	ValueI = int4(-5, 0, 0, 0);
 }
 CParticleNodePinIn	$1AAF035C
 {
@@ -4266,7 +4268,7 @@ CParticleNodePinIn	$9CA40BEA
 	Visible = false;
 	Owner = "$74BA1858";
 	BaseType = int;
-	ValueI = int4(-1, 0, 0, 0);
+	ValueI = int4(-6, 0, 0, 0);
 }
 CParticleNodePinIn	$66A9AFEA
 {
