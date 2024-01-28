@@ -13,6 +13,8 @@ public class ShopManager : MonoBehaviour
     [Header("UI")]
     [SerializeField]
     TMP_Text _moneyText;
+    [SerializeField]
+    AudioClip _rerollClip;
     public int Money
     {
         get => _money;
@@ -78,7 +80,7 @@ public class ShopManager : MonoBehaviour
         if (Money > 0)
         {
             Money -= 1;
-            AudioReroll.Play();
+            AudioReroll.PlayOneShot(_rerollClip, 1f);
             int randChance = Random.Range(0, 100);
             if (randChance > _rerollFailChance)
             {

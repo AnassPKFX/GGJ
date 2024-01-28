@@ -61,6 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _tpPoint: {fileID: 1342909483267609670}
   _slotType: 0
+  _isOccupied: 0
 --- !u!1 &1342909483267609673
 GameObject:
   m_ObjectHideFlags: 0
