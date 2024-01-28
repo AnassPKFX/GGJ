@@ -10,9 +10,9 @@ public class Movable : MonoBehaviour
     [SerializeField] LayerMask Mask;
     [SerializeField] float lerpMovementTime = .5f;
     [SerializeField] AnimationCurve _animationCurve;
-    bool _canBeMoved = true;
+    protected bool _canBeMoved = true;
 
-    public Slot SlotBase => _slotBase;
+    public Slot SlotBase { get => _slotBase; set => _slotBase = value; }
     [SerializeField]
     protected Slot _slotBase;
     public Slot TargetSlot { get => _targetSlot; set => _targetSlot = value; }
@@ -21,7 +21,8 @@ public class Movable : MonoBehaviour
     public JokerStats JokerStats { get => _jokerStats; set => _jokerStats = value; }
     protected JokerStats _jokerStats;
 
-    protected void Start()
+    protected Coroutine _c;
+    protected void Awake()
     {
         _canBeMoved = true;
 
@@ -54,19 +55,22 @@ public class Movable : MonoBehaviour
             return;
         GameManager.Instance.CurrentDraggedMovable = null;
 
+
         if (_targetSlot != _slotBase)
         {
-            StartCoroutine(MoveToSlot(_targetSlot));
+            _c = StartCoroutine(MoveToSlot(_targetSlot));
         }
         else
         {
-            StartCoroutine(MoveToSlot(_slotBase));
+            _c = StartCoroutine(MoveToSlot(_slotBase));
         }
 
     }
 
     protected IEnumerator MoveToSlot(Slot targetSlot)
     {
+        _slotBase.IsOccupied = false;
+        GetComponent<Rigidbody>().isKinematic = true;
         Vector3 targetPos = targetSlot.TpPoint.position + new Vector3(0, 1);
         _canBeMoved = false;
         float cursor = 0;
@@ -76,13 +80,20 @@ public class Movable : MonoBehaviour
             transform.position = Vector3.Lerp(startPos, targetPos, _animationCurve.Evaluate(cursor/lerpMovementTime));
             cursor += Time.deltaTime;
             yield return new WaitForSeconds(Time.deltaTime/lerpMovementTime);
-            Debug.Log(cursor);
+            //Debug.Log(cursor);
         }
         GetComponent<Rigidbody>().isKinematic = false;
         if (AnalyseNewSlot(targetSlot))
         {
-            _slotBase = targetSlot;
 
+            targetSlot.IsOccupied = true;
+            _slotBase = targetSlot;
+        }
+        else
+        {
+            StopCoroutine(_c);
+            _canBeMoved = true;
+            _c = StartCoroutine(MoveToSlot(_slotBase));
         }
         _canBeMoved = true;
     }
@@ -94,8 +105,29 @@ public class Movable : MonoBehaviour
 }
 public class JokerStats
 {
+    public JokerStats(string name) 
+    { 
+        _name = name;
+        _humourStats = new();
+        _humourStats.Add(new JokerStatItem(GameData.EHumourType.DarkHumour, 0));
+        _humourStats.Add(new JokerStatItem(GameData.EHumourType.Imitations, 0));
+        _humourStats.Add(new JokerStatItem(GameData.EHumourType.Jokes, 0));
+    }
+
     public string Name => _name;
     string _name;
-    public Dictionary<GameData.EHumourType, int> HumourStats => _humourStats;
-    private Dictionary<GameData.EHumourType, int> _humourStats;
+
+    public struct JokerStatItem
+    {
+        public JokerStatItem(GameData.EHumourType K, int V)
+        {
+            Key = K;
+            Value = V;
+        }
+        public GameData.EHumourType Key;
+        public int Value;
+    }
+    public List<JokerStatItem> HumourStats => _humourStats;
+
+    private List<JokerStatItem> _humourStats;
 }

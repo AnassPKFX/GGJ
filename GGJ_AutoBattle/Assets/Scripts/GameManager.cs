@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
 using static GameData;
@@ -17,8 +18,6 @@ public class GameManager : MonoBehaviour
     public int NumberOfSlots => _numberOfSlots;
     private int _numberOfSlots;
 
-    public int Money { get => _money; set => _money = value; }
-    private int _money;
     public int RoundCount => _roundCount;
     private int _roundCount;
 
@@ -31,7 +30,7 @@ public class GameManager : MonoBehaviour
     private EnemyData.ETurn _currentTurn;
 
     public List<Joker> Team {get => _team; set=> _team = value; }
-    private List<Joker> _team;
+    private List<Joker> _team = new();
 
     public Movable CurrentDraggedMovable{get => _currentDraggedEntity; set=> _currentDraggedEntity = value; }
     private Movable _currentDraggedEntity;
@@ -44,6 +43,7 @@ public class GameManager : MonoBehaviour
     [Header("Game Stats")]
     [SerializeField]
     GameData _gameData;
+
 
     private enum EUpgradeType
     {
@@ -68,17 +68,17 @@ public class GameManager : MonoBehaviour
         Debug.Log("<color=magenta> Round starting : " + ((int)_roundCount + 1) + "</color>");
 
     }
+    
 
     private void InitGameStats()
     {
         _numberOfSlots = _gameData.NumberOfSlotsStart;
-        _money = _gameData.MoneyStart;
         _roundCount = 0;
         _gamePhase = EGamePhase.START;
         _currentTier = CharacterTierData.ETier.TIER_1;
         _currentTurn = EnemyData.ETurn.TURN_1;
 
-    List<HumourTypeData> humourTypeDatas = Resources.LoadAll<HumourTypeData>("Data/HumourTypeData").ToList();
+        List<HumourTypeData> humourTypeDatas = Resources.LoadAll<HumourTypeData>("Data/HumourTypeData").ToList();
         foreach(var htd in humourTypeDatas)
         {
             _humourTypeDict.Add(htd.HumourType, htd);
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
                 return;
             case EUpgradeType.ADD_MONEY:
                 Debug.Log("<color=yellow> Upgrade : ADD_MONEY</color>");
-                _money += UnityEngine.Random.Range(_gameData.MoneyUpgradeMin, _gameData.MoneyUpgradeMax);
+                ShopManager.Instance.Money += UnityEngine.Random.Range(_gameData.MoneyUpgradeMin, _gameData.MoneyUpgradeMax);
                 return;
             case EUpgradeType.ADD_STATS:
                 Debug.Log("<color=yellow> Upgrade : ADD_STATS</color>");
@@ -157,10 +157,10 @@ public class GameManager : MonoBehaviour
                 //Not supposed to happen
                 return;
             case EGamePhase.SHOP:
-                // TO DO
+                ShopManager.Instance.StartShopPhase();
                 return;
             case EGamePhase.FIGHT:
-                ShopManager.Instance.StartShopPhase();
+                // TO DO
                 return;  
             case EGamePhase.UPGRADE:
                 UpgradeStatsRandom();

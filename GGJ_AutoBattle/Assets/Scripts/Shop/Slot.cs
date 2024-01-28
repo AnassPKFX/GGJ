@@ -15,11 +15,17 @@ public class Slot : MonoBehaviour
         TEAM_SLOT,
         TRASH_SLOT
     }
-    public ESlotType SlotType => _slotType;
+    public ESlotType SlotType { get => _slotType; set => _slotType = value; }
     [SerializeField]
     private ESlotType _slotType;
-    public bool IsOccupied => _isOccupied;
+    public bool IsOccupied { get => _isOccupied; set => _isOccupied = value; }
+    [SerializeField]
     bool _isOccupied;
+    private void Awake()
+    {
+        if (_slotType == ESlotType.TEAM_SLOT)
+            _isOccupied = false;
+    }
 
     private void OnMouseEnter()
     {
@@ -28,7 +34,7 @@ public class Slot : MonoBehaviour
             GameManager.Instance.CurrentDraggedMovable.TargetSlot = this;
         }
     }
-    private void OnMouseExit()
+    private void OnMouseUp()
     {
         if (GameManager.Instance.CurrentDraggedMovable != null)
         {

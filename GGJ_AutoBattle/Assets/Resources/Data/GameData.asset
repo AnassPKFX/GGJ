@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d7cc15fae1941419c18a63c7530dc1, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  _humourTypeDatabase: []
   _numberOfSlotsStart: 3
   _moneyStart: 15
   _totalRoundCount: 7
+  _addedMoneyPerTurn: 15
+  _listCharactersNames:
+  - aaaaa
+  - zzzzzzzzz
+  - eeeee
+  _multiplierPriceFromStats: 1
+  _rerollPrice: 1
+  _startFailChancePercentage: 40
+  _failChanceIncrement: 20
   _moneyUpgradeMin: 5
   _moneyUpgradeMax: 10
