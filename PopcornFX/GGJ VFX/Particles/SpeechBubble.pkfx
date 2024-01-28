@@ -1718,14 +1718,12 @@ CParticleNodeGraph	$75CEA734
 		"$0EF6754D",
 		"$FD115710",
 		"$7369910A",
-		"$51137698",
 		"$717C6061",
 		"$CABAADD1",
 		"$E57D441E",
 		"$075979B4",
 		"$A75E1E03",
 		"$4B3B1E8D",
-		"$BDF1AC76",
 		"$1154B7B0",
 		"$F84A97FC",
 		"$89EA4750",
@@ -1772,6 +1770,7 @@ CParticleNodeGraph	$75CEA734
 		"$4F6F6376",
 		"$522896C6",
 		"$250AAA50",
+		"$33E9732B",
 	};
 	WorkspaceZoom = -4;
 }
@@ -1848,8 +1847,6 @@ CParticleNodeRendererBillboard	$79AECA15
 		"$C8828447",
 		"$69E72413",
 		"$3D72046E",
-		"$62778038",
-		"$29F7260D",
 		"$09FFB770",
 		"$88A91C40",
 		"$B39B8F53",
@@ -2064,7 +2061,6 @@ CParticleNodePinIn	$3D72046E
 	Visible = false;
 	Owner = "$79AECA15";
 	BaseType = bool;
-	ValueB = bool4(true, false, false, false);
 }
 CParticleNodePinIn	$09FFB770
 {
@@ -2578,26 +2574,6 @@ CParticleNodePinOut	$21A614BF
 	Owner = "$FD115710";
 	BaseType = bool;
 }
-CParticleNodePinIn	$62778038
-{
-	SelfName = "AlphaRemap.AlphaMap";
-	Type = dataImage;
-	Visible = false;
-	Owner = "$79AECA15";
-	BaseType = dataImage;
-	ValueD = "Content/Textures/VFX_asset_AlphaRemapDissolve3.png";
-}
-CParticleNodePinIn	$29F7260D
-{
-	SelfName = "AlphaRemap.Cursor";
-	Type = float;
-	Owner = "$79AECA15";
-	BaseType = float;
-	ConnectedPins = {
-		"$ACBFE413",
-	};
-	ValueF = float4(1.0000000e+00, 1.0000000e+00, 1.0000000e+00, 1.0000000e+00);
-}
 CParticleNodeTemplate	$7369910A
 {
 	ExecStage = Evolve;
@@ -2632,34 +2608,6 @@ CParticleNodePinOut	$329DD4F9
 		"$20A9F842",
 	};
 }
-CParticleNodeMathFunction1	$51137698
-{
-	InputPins = {
-		"$48395330",
-	};
-	OutputPins = {
-		"$84A0BA2C",
-	};
-	WorkspacePosition = int2(-22, 1408);
-	Function = Saturate;
-}
-CParticleNodePinIn	$48395330
-{
-	SelfName = "Value";
-	Type = float;
-	Owner = "$51137698";
-	ConnectedPins = {
-		"$6D03D6A6",
-	};
-}
-CParticleNodePinOut	$84A0BA2C
-{
-	SelfName = "Value";
-	Owner = "$51137698";
-	ConnectedPins = {
-		"$2FE74E1C",
-	};
-}
 CParticleNodeMathFunction1	$717C6061
 {
 	InputPins = {
@@ -2668,7 +2616,7 @@ CParticleNodeMathFunction1	$717C6061
 	OutputPins = {
 		"$78500549",
 	};
-	WorkspacePosition = int2(176, 1408);
+	WorkspacePosition = int2(-22, 1408);
 	Function = OneMinus;
 }
 CParticleNodePinIn	$2FE74E1C
@@ -2676,16 +2624,13 @@ CParticleNodePinIn	$2FE74E1C
 	SelfName = "Value";
 	Owner = "$717C6061";
 	ConnectedPins = {
-		"$84A0BA2C",
+		"$CC5EF5BF",
 	};
 }
 CParticleNodePinOut	$78500549
 {
 	SelfName = "Value";
 	Owner = "$717C6061";
-	ConnectedPins = {
-		"$5B0EB9AF",
-	};
 }
 CParticleNodeArithmetic	$CABAADD1
 {
@@ -2696,7 +2641,7 @@ CParticleNodeArithmetic	$CABAADD1
 	OutputPins = {
 		"$6D03D6A6",
 	};
-	WorkspacePosition = int2(-330, 1408);
+	WorkspacePosition = int2(-528, 1408);
 	Operation = Mul;
 }
 CParticleNodePinIn	$AC40DED3
@@ -2720,7 +2665,7 @@ CParticleNodePinOut	$6D03D6A6
 	SelfName = "Value";
 	Owner = "$CABAADD1";
 	ConnectedPins = {
-		"$48395330",
+		"$0B8727A6",
 	};
 }
 CParticleNodeTemplate	$E57D441E
@@ -3080,32 +3025,6 @@ CParticleNodePinOut	$402B1753
 	Owner = "$4B3B1E8D";
 	ConnectedPins = {
 		"$536242FE",
-	};
-}
-CParticleNodePassThrough	$BDF1AC76
-{
-	InputPins = {
-		"$5B0EB9AF",
-	};
-	OutputPins = {
-		"$ACBFE413",
-	};
-	WorkspacePosition = int2(462, 638);
-}
-CParticleNodePinIn	$5B0EB9AF
-{
-	SelfName = "Value";
-	Owner = "$BDF1AC76";
-	ConnectedPins = {
-		"$78500549",
-	};
-}
-CParticleNodePinOut	$ACBFE413
-{
-	SelfName = "Value";
-	Owner = "$BDF1AC76";
-	ConnectedPins = {
-		"$29F7260D",
 	};
 }
 CParticleNodePassThrough	$1154B7B0
@@ -13080,5 +12999,48 @@ CParticleNodePinOut	$664BB7D4
 	Owner = "$83B31AB9";
 	ConnectedPins = {
 		"$37260B01",
+	};
+}
+CParticleNodeMathFunction3	$33E9732B
+{
+	InputPins = {
+		"$0B8727A6",
+		"$E5010273",
+		"$0E6209B1",
+	};
+	OutputPins = {
+		"$CC5EF5BF",
+	};
+	WorkspacePosition = int2(-264, 1408);
+	Function = Clamp;
+}
+CParticleNodePinIn	$0B8727A6
+{
+	SelfName = "Value";
+	Owner = "$33E9732B";
+	ConnectedPins = {
+		"$6D03D6A6",
+	};
+}
+CParticleNodePinIn	$E5010273
+{
+	SelfName = "Min";
+	Type = float;
+	Owner = "$33E9732B";
+	ValueF = float4(1.0000000e-01, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$0E6209B1
+{
+	SelfName = "Max";
+	Type = float;
+	Owner = "$33E9732B";
+	ValueF = float4(8.9999998e-01, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinOut	$CC5EF5BF
+{
+	SelfName = "Value";
+	Owner = "$33E9732B";
+	ConnectedPins = {
+		"$2FE74E1C",
 	};
 }

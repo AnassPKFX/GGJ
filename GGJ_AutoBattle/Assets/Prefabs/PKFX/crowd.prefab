@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5248713250041765169
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3320714908611742216}
+  - component: {fileID: 7017774682052097132}
+  m_Layer: 0
+  m_Name: crowd
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3320714908611742216
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248713250041765169}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.57403, y: 6.6139402, z: -6.6432734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7017774682052097132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248713250041765169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5c02dd42880460b914f6e0206b8c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayOnStart: 1
+  m_TriggerAndForget: 0
+  m_KillEffectOnDestroy: 0
+  m_PreWarm: 0
+  m_Events: []
+  m_FxAttributesDesc:
+  - m_Type: 31
+    m_Semantic: 0
+    m_DropMode: 0
+    m_MinMaxFlag: 0
+    m_Name: Vertical Offset
+    m_Description: 
+    m_DropNameList: 
+    m_DefaultValue:
+      x:
+        i1: -1073741824
+        f1: -2
+      y:
+        i1: 0
+        f1: 0
+      z:
+        i1: 0
+        f1: 0
+      w:
+        i1: 0
+        f1: 0
+    m_MinValue:
+      x:
+        i1: -8388609
+        f1: -3.4028235e+38
+      y:
+        i1: -8388609
+        f1: -3.4028235e+38
+      z:
+        i1: -8388609
+        f1: -3.4028235e+38
+      w:
+        i1: -8388609
+        f1: -3.4028235e+38
+    m_MaxValue:
+      x:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      y:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      z:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      w:
+        i1: 2139095039
+        f1: 3.4028235e+38
+  - m_Type: 31
+    m_Semantic: 0
+    m_DropMode: 0
+    m_MinMaxFlag: 0
+    m_Name: Jump Intensity
+    m_Description: 
+    m_DropNameList: 
+    m_DefaultValue:
+      x:
+        i1: 1065353216
+        f1: 1
+      y:
+        i1: 0
+        f1: 0
+      z:
+        i1: 0
+        f1: 0
+      w:
+        i1: 0
+        f1: 0
+    m_MinValue:
+      x:
+        i1: -8388609
+        f1: -3.4028235e+38
+      y:
+        i1: -8388609
+        f1: -3.4028235e+38
+      z:
+        i1: -8388609
+        f1: -3.4028235e+38
+      w:
+        i1: -8388609
+        f1: -3.4028235e+38
+    m_MaxValue:
+      x:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      y:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      z:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      w:
+        i1: 2139095039
+        f1: 3.4028235e+38
+  m_EventDescsHash: 0
+  m_FxAttributesDescHash: -853244200
+  m_FxAttributesStartValues:
+  - i1: -1073741824
+    f1: -2
+  - i1: 0
+    f1: 0
+  - i1: 0
+    f1: 0
+  - i1: 0
+    f1: 0
+  - i1: 1065353216
+    f1: 1
+  - i1: 0
+    f1: 0
+  - i1: 0
+    f1: 0
+  - i1: 0
+    f1: 0
+  m_FxSamplersList: []
+  m_FxSamplersDescHash: 371857150
+  m_BoundFx: {fileID: 0}
+  m_FxAsset: {fileID: 11400000, guid: 559734aa3ea25454a88d5da22f2fc093, type: 2}
+  m_FxName: Particles/Crowd.pkfx

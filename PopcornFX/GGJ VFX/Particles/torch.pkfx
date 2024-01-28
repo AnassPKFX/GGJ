@@ -8,6 +8,7 @@ CParticleAttributeList	$35A36C4E
 {
 	AttributeList = {
 		"$A7FF78AD",
+		"$DFE9345C",
 	};
 }
 CParticleNodeGraph	$4B933A29
@@ -405,6 +406,7 @@ CParticleNodeGraph	$20BFDD27
 		"$234F5348",
 		"$6A76A27C",
 		"$A34CD2FC",
+		"$34760C23",
 	};
 	WorkspaceZoom = -4;
 }
@@ -2010,6 +2012,7 @@ CParticleNodeGraph	$1EE7B890
 		"$EAB84E48",
 		"$E847C35A",
 		"$BBC5DA01",
+		"$48AF5210",
 	};
 	WorkspaceZoom = -4;
 }
@@ -3856,6 +3859,9 @@ CParticleNodePinIn	$41FACE63
 	Type = float4;
 	Owner = "$EC236A60";
 	BaseType = float4;
+	ConnectedPins = {
+		"$7DC07833",
+	};
 	ValueF = float4(1.0000000e+00, 2.4794829e-01, 2.1159772e-02, 1.0000000e+00);
 }
 CParticleNodePinIn	$D2BB314A
@@ -4809,6 +4815,9 @@ CParticleNodePinIn	$5752AA8E
 	Type = float4;
 	Owner = "$F7C206BE";
 	BaseType = float4;
+	ConnectedPins = {
+		"$AC29079A",
+	};
 	ValueF = float4(1.0000000e+00, 2.4794829e-01, 2.1159772e-02, 1.0000000e+00);
 }
 CParticleNodePinIn	$383B41A8
@@ -6486,5 +6495,73 @@ CParticleNodePinOut	$BE9B4D8A
 	Owner = "$BBC5DA01";
 	ConnectedPins = {
 		"$754D6CCD",
+	};
+}
+CParticleAttributeDeclaration	$DFE9345C
+{
+	ExportedName = "Color";
+	ExportedType = float4;
+	Semantic = Color;
+	DefaultValueF4 = float4(1.0000000e+00, 2.4794830e-01, 2.1159770e-02, 1.0000000e+00);
+	Pinned = true;
+}
+CParticleNodeTemplateExport	$48AF5210
+{
+	InputPins = {
+		"$FE422DB0",
+	};
+	OutputPins = {
+		"$7DC07833",
+	};
+	WorkspacePosition = int2(-264, 1584);
+	ExportedName = "Color";
+	ExportedType = float4;
+	Semantic = Color;
+	Type = Input;
+	InputType = Attribute;
+	DefaultValueF4 = float4(1.0000000e+00, 2.4794830e-01, 2.1159770e-02, 1.0000000e+00);
+}
+CParticleNodePinIn	$FE422DB0
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$48AF5210";
+}
+CParticleNodePinOut	$7DC07833
+{
+	SelfName = "Value";
+	Owner = "$48AF5210";
+	ConnectedPins = {
+		"$41FACE63",
+	};
+}
+CParticleNodeTemplateExport	$34760C23
+{
+	InputPins = {
+		"$A12ED0B0",
+	};
+	OutputPins = {
+		"$AC29079A",
+	};
+	WorkspacePosition = int2(132, 1254);
+	ExportedName = "Color";
+	ExportedType = float4;
+	Semantic = Color;
+	Type = Input;
+	InputType = Attribute;
+	DefaultValueF4 = float4(1.0000000e+00, 2.4794830e-01, 2.1159770e-02, 1.0000000e+00);
+}
+CParticleNodePinIn	$A12ED0B0
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$34760C23";
+}
+CParticleNodePinOut	$AC29079A
+{
+	SelfName = "Value";
+	Owner = "$34760C23";
+	ConnectedPins = {
+		"$5752AA8E",
 	};
 }
