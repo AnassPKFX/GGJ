@@ -164,6 +164,7 @@ CParticleNodeGraph	$82EA8DF9
 		"$6F372A10",
 		"$1F9236F2",
 		"$AFB05D52",
+		"$77938F68",
 	};
 	WorkspaceZoom = -4;
 }
@@ -605,7 +606,7 @@ CParticleNodePinIn	$22D00A98
 	Owner = "$CF7382E8";
 	BaseType = float;
 	ConnectedPins = {
-		"$BEAB638E",
+		"$D2FE4D88",
 	};
 }
 CParticleNodePinIn	$1DCB1CED
@@ -1861,7 +1862,7 @@ CParticleNodePinOut	$BEAB638E
 	Owner = "$8D257B10";
 	ConnectedPins = {
 		"$D0B9838B",
-		"$22D00A98",
+		"$D1FC92CD",
 	};
 }
 CParticleNodePinIn	$57CC8EA0
@@ -2823,6 +2824,7 @@ CParticleNodeGraph	$6BB24A19
 		"$1B2B07F9",
 		"$900B967F",
 		"$64E87367",
+		"$43A477CF",
 	};
 	WorkspaceZoom = -4;
 }
@@ -3630,7 +3632,7 @@ CParticleNodePinOut	$5A01CD2D
 	Owner = "$BBCE87F0";
 	ConnectedPins = {
 		"$BF8290BC",
-		"$8E263A36",
+		"$6D52BA4C",
 	};
 }
 CParticleNodeMathFunction2	$B2257E80
@@ -3904,7 +3906,7 @@ CParticleNodePinIn	$8E263A36
 	Owner = "$6B8082BA";
 	BaseType = float;
 	ConnectedPins = {
-		"$5A01CD2D",
+		"$D8466784",
 	};
 }
 CParticleNodePinIn	$E60859FE
@@ -5179,5 +5181,73 @@ CParticleNodePinOut	$27571379
 	Owner = "$64E87367";
 	ConnectedPins = {
 		"$EE44106C",
+	};
+}
+CParticleNodeArithmetic	$77938F68
+{
+	InputPins = {
+		"$D1FC92CD",
+		"$715BB607",
+	};
+	OutputPins = {
+		"$D2FE4D88",
+	};
+	WorkspacePosition = int2(704, 1408);
+}
+CParticleNodePinIn	$D1FC92CD
+{
+	SelfName = "Value";
+	Owner = "$77938F68";
+	ConnectedPins = {
+		"$BEAB638E",
+	};
+}
+CParticleNodePinIn	$715BB607
+{
+	SelfName = "ValueB";
+	Type = float;
+	Owner = "$77938F68";
+	ValueF = float4(3.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinOut	$D2FE4D88
+{
+	SelfName = "Value";
+	Owner = "$77938F68";
+	ConnectedPins = {
+		"$22D00A98",
+	};
+}
+CParticleNodeArithmetic	$43A477CF
+{
+	InputPins = {
+		"$6D52BA4C",
+		"$140492E4",
+	};
+	OutputPins = {
+		"$D8466784",
+	};
+	WorkspacePosition = int2(2178, 1606);
+}
+CParticleNodePinIn	$6D52BA4C
+{
+	SelfName = "Value";
+	Owner = "$43A477CF";
+	ConnectedPins = {
+		"$5A01CD2D",
+	};
+}
+CParticleNodePinIn	$140492E4
+{
+	SelfName = "ValueB";
+	Type = float;
+	Owner = "$43A477CF";
+	ValueF = float4(3.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinOut	$D8466784
+{
+	SelfName = "Value";
+	Owner = "$43A477CF";
+	ConnectedPins = {
+		"$8E263A36",
 	};
 }

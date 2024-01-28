@@ -97,9 +97,63 @@ MonoBehaviour:
       w:
         i1: 2139095039
         f1: 3.4028235e+38
-  m_EventDescsHash: 0
-  m_FxAttributesDescHash: 727518817
+  - m_Type: 31
+    m_Semantic: 0
+    m_DropMode: 0
+    m_MinMaxFlag: 1
+    m_Name: global_scale
+    m_Description: 
+    m_DropNameList: 
+    m_DefaultValue:
+      x:
+        i1: 1065353216
+        f1: 1
+      y:
+        i1: 0
+        f1: 0
+      z:
+        i1: 0
+        f1: 0
+      w:
+        i1: 0
+        f1: 0
+    m_MinValue:
+      x:
+        i1: 1036831949
+        f1: 0.1
+      y:
+        i1: 0
+        f1: 0
+      z:
+        i1: 0
+        f1: 0
+      w:
+        i1: 0
+        f1: 0
+    m_MaxValue:
+      x:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      y:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      z:
+        i1: 2139095039
+        f1: 3.4028235e+38
+      w:
+        i1: 2139095039
+        f1: 3.4028235e+38
+  m_EventDescsHash: 371857150
+  m_FxAttributesDescHash: -455624754
   m_FxAttributesStartValues:
+  - i1: 1065353216
+    f1: 1
+  - i1: 0
+    f1: 0
+  - i1: 0
+    f1: 0
+  - i1: 0
+    f1: 0
   - i1: 1065353216
     f1: 1
   - i1: 0
