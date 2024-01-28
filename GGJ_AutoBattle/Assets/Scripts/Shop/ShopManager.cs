@@ -42,18 +42,22 @@ public class ShopManager : MonoBehaviour
     private List<CharacterTierData> _tierStatsData;
     float _rerollFailChance;
 
+    AudioSource AudioReroll;
+
     void Start()
     {
+        AudioReroll = GetComponent<AudioSource>();
         _instance = this;
         ShopScene.SetActive(false);
         _tierStatsData = Resources.LoadAll<CharacterTierData>("Data/Characters/PlayerCharacters").ToList();
-        Money = GameManager.Instance.GameData.MoneyStart;
+        Money = 0;
 
     }
 
     public void StartShopPhase()
     {
         ShopScene.SetActive(true);
+        Money += GameManager.Instance.GameData.MoneyStart ;
         _rerollFailChance = GameManager.Instance.GameData.StartFailChancePercentage;
         InitSlots(false);
     }
@@ -67,6 +71,8 @@ public class ShopManager : MonoBehaviour
     }
     public void Reroll()
     {
+        Money -= 1;
+        AudioReroll.Play();
         int randChance = Random.Range(0, 100);
         if(randChance > _rerollFailChance)
         {
