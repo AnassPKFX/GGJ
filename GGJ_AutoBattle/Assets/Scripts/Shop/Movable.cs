@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using PopcornFX;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -24,11 +25,33 @@ public class Movable : MonoBehaviour
     protected Coroutine _c;
 
     protected bool _canBeMovedManually = true;
+    [SerializeField]
+    PKFxEmitter SpeechScroll;
+    [SerializeField]
+    PKFxEmitter JokeSuccess;
+    [SerializeField]
+    PKFxEmitter JokeFailure;
+
     protected void Awake()
     {
         _canBeMoved = true;
 
     }
+    public void PlayFX_Joke(int jokeType)
+    {
+        SpeechScroll.SetAttributeSafe(0, jokeType);
+        SpeechScroll.StartEffect();
+
+    }
+    public void PlayFX_Success()
+    {
+        JokeSuccess.StartEffect();
+    }
+    public void PlayFX_Fail()
+    {
+        JokeFailure.StartEffect();
+    }
+
     public virtual void InitStats(JokerStats newStats)
     {
         _jokerStats = newStats;

@@ -11,6 +11,7 @@ public class Enemy : Joker
     {
         _canBeMovedManually = false;
         base.InitStats(newStats);
+        PriceText.gameObject.SetActive(false);
     }
     protected override bool AnalyseNewSlot(Slot newSlot)
     {

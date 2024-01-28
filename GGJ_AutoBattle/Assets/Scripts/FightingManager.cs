@@ -66,7 +66,10 @@ public class FightingManager : MonoBehaviour
             {
                 //LANCEER BLAGUE -------------
 
-                yield return new WaitForSeconds(1);
+                (charaSend).PlayFX_Joke(themeChosen.Id);
+                (enemySend).PlayFX_Joke(themeChosen.Id);
+                yield return new WaitForSeconds(2);
+
                 bool testJoueur = false;
                 bool testEnnemi = false;
 
@@ -77,10 +80,13 @@ public class FightingManager : MonoBehaviour
                 {
                     Debug.Log("La blague a fonctionnée");
                     testJoueur = true;
+                    (charaSend).PlayFX_Success();
                 }
                 else
                 {
                     Debug.Log("La blague n'a pas fonctionnée");
+                    (charaSend).PlayFX_Fail();
+
                 }
 
                 //La blague a-t-elle fonctionné ? -- Ennemi 
@@ -90,28 +96,39 @@ public class FightingManager : MonoBehaviour
 
                 if (y >= limitWinJoke)
                 {
+                    (enemySend).PlayFX_Success();
                     Debug.Log("La blague ennemie a fonctionnée");
                     testEnnemi = true;
                 }
                 else
                 {
+                    (enemySend).PlayFX_Fail();
+
                     Debug.Log("La blague ennemie n'a pas fonctionnée");
                 }
+                yield return new WaitForSeconds(1);
 
                 //Résultats 
                 if (testJoueur && !testEnnemi)
                 {
                     GameManager.Instance.EnemyTeam.Remove((Enemy)enemySend);
+                    yield return new WaitForSeconds(.5f);
 
                     LoseTurn(enemySend);
+                    yield return new WaitForSeconds(.5f);
+
                     equality = false;
 
                     //Le personnage adverse est éliminé.
                 }
                 else if (!testJoueur && testEnnemi)
                 {
+                    yield return new WaitForSeconds(.5f);
+
                     GameManager.Instance.Team.Remove((Joker)charaSend);
                     LoseTurn(charaSend);
+                    yield return new WaitForSeconds(.5f);
+
                     //Notre personnage est éliminé.
                     equality = false;
                 }
@@ -119,6 +136,7 @@ public class FightingManager : MonoBehaviour
                 {
                     Debug.Log("Egalité");
                 }
+                yield return new WaitForSeconds(.5f);
             }
 
         }

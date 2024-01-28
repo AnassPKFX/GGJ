@@ -14,5 +14,8 @@ public class HumourTypeData : ScriptableObject
     [SerializeField]
     private string _displayName;
 
+    public int Id { get => _id; set => _id = value; }
+    [SerializeField]
+    private int _id;
 
 }
