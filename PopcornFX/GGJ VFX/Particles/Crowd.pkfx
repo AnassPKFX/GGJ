@@ -9,6 +9,7 @@ CParticleAttributeList	$35A36C4E
 	AttributeList = {
 		"$0B018E6A",
 		"$59F9FF98",
+		"$51A45BC7",
 	};
 }
 CParticleNodeGraph	$4B933A29
@@ -162,6 +163,7 @@ CParticleNodeGraph	$82EA8DF9
 		"$A787883B",
 		"$6F372A10",
 		"$1F9236F2",
+		"$AFB05D52",
 	};
 	WorkspaceZoom = -4;
 }
@@ -870,6 +872,9 @@ CParticleNodePinIn	$C2910D1D
 	SelfName = "ValueB";
 	Type = float;
 	Owner = "$B46F22D2";
+	ConnectedPins = {
+		"$05AEE30A",
+	};
 	ValueF = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
 }
 CParticleNodePinOut	$DDE64312
@@ -2817,6 +2822,7 @@ CParticleNodeGraph	$6BB24A19
 		"$F3EC64C8",
 		"$1B2B07F9",
 		"$900B967F",
+		"$64E87367",
 	};
 	WorkspaceZoom = -4;
 }
@@ -4129,6 +4135,9 @@ CParticleNodePinIn	$EE44106C
 	SelfName = "ValueB";
 	Type = float;
 	Owner = "$76BE9562";
+	ConnectedPins = {
+		"$27571379",
+	};
 	ValueF = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
 }
 CParticleNodePinOut	$3AB2F4A0
@@ -5104,5 +5113,71 @@ CParticleNodePinOut	$0557B3D0
 	Owner = "$1F9236F2";
 	ConnectedPins = {
 		"$ECB65EC7",
+	};
+}
+CParticleAttributeDeclaration	$51A45BC7
+{
+	ExportedName = "Depth Offset";
+	DefaultValueF4 = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+	Pinned = true;
+}
+CParticleNodeTemplateExport	$AFB05D52
+{
+	ExecStage = Evolve;
+	InputPins = {
+		"$200309DB",
+	};
+	OutputPins = {
+		"$05AEE30A",
+	};
+	WorkspacePosition = int2(-726, 880);
+	ExportedName = "Depth Offset";
+	ExportedType = float;
+	Type = Input;
+	InputType = Attribute;
+	DefaultValueF4 = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$200309DB
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$AFB05D52";
+}
+CParticleNodePinOut	$05AEE30A
+{
+	SelfName = "Value";
+	Owner = "$AFB05D52";
+	ConnectedPins = {
+		"$C2910D1D",
+	};
+}
+CParticleNodeTemplateExport	$64E87367
+{
+	ExecStage = Evolve;
+	InputPins = {
+		"$4796EECC",
+	};
+	OutputPins = {
+		"$27571379",
+	};
+	WorkspacePosition = int2(-462, 682);
+	ExportedName = "Depth Offset";
+	ExportedType = float;
+	Type = Input;
+	InputType = Attribute;
+	DefaultValueF4 = float4(1.0000000e+00, 0.0000000e+00, 0.0000000e+00, 0.0000000e+00);
+}
+CParticleNodePinIn	$4796EECC
+{
+	SelfName = "DefaultValue";
+	Visible = false;
+	Owner = "$64E87367";
+}
+CParticleNodePinOut	$27571379
+{
+	SelfName = "Value";
+	Owner = "$64E87367";
+	ConnectedPins = {
+		"$EE44106C",
 	};
 }

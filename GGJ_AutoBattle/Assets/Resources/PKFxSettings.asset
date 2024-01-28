@@ -439,6 +439,13 @@ MonoBehaviour:
     m_StaticWorldBounds:
       m_Center: {x: 0, y: 0, z: 0}
       m_Extent: {x: 50, y: 50, z: 50}
+  - m_GeneratedName: Billboard  Atlas Color Diffuse  AlphaBlend UVs  Content/Textures/glyphs_alphaRemap.png
+      (none) (none) (none) (none) (none) (none) (none) 1 0
+    m_DefaultVertexBufferSize: 384
+    m_DefaultIndexBufferSize: 1155
+    m_StaticWorldBounds:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 50, y: 50, z: 50}
   m_UseMeshInstancing: 1
   m_FreeUnusedBatches: 0
   m_FrameCountBeforeFreeingUnusedBatches: 240
