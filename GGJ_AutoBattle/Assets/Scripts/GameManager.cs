@@ -5,6 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 using static GameData;
 using static GameManager;
 using static JokerStats;
@@ -44,6 +45,10 @@ public class GameManager : MonoBehaviour
     public Slot Trash => _trash;
     [SerializeField]
     private Slot _trash;
+    [SerializeField]
+    private GameObject _loseScreen;
+
+
     public List<HumourTypeData> HumourTypeDatas => _humourTypeDatas;
     List<HumourTypeData> _humourTypeDatas = new();
 
@@ -77,9 +82,15 @@ public class GameManager : MonoBehaviour
         _instance = this;
         InitGameStats();
         Debug.Log("<color=magenta> Round starting : " + ((int)_roundCount + 1) + "</color>");
+        _loseScreen.SetActive(false);
+
 
     }
-    
+    private void Start()
+    {
+        NextPhase(false);
+        
+    }
 
     private void InitGameStats()
     {
@@ -189,7 +200,7 @@ public class GameManager : MonoBehaviour
                 return;
             case EGamePhase.FIGHT:
                 CanMoveEntities = false;
-                // TO DO
+                FightingManager.Instance.StartFight();
                 return;  
             case EGamePhase.UPGRADE:
                 CanMoveEntities = false;
@@ -203,10 +214,16 @@ public class GameManager : MonoBehaviour
                 _currentTurn = EnemyData.ETurn.TURN_1;
 
                 Debug.Log("<color=cyan> GAME END </color>");
-
-                NextPhase(false);
+                _loseScreen.SetActive(true);
                 return;
         }
+    }
+
+    public void Retry()
+    {
+
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(currentSceneName);
     }
 
 }
