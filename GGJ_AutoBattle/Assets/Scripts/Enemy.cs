@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using static Joker;
 
-public class Enemy : Movable
+public class Enemy : Joker
 {
 
     public override void InitStats(JokerStats newStats)

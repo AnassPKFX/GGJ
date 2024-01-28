@@ -59,6 +59,10 @@ public class ShopManager : MonoBehaviour
     }
     public void StopShopPhase()
     {
+        StartCoroutine(Wait(1.5f));
+    }
+    IEnumerator Wait(float t) { 
+        yield return new WaitForSeconds(t);
         _jokersOnSale.ForEach(x => x.transform.GetComponent<Collider>().enabled = false);
         _jokersOnSale.ForEach(x => StartCoroutine(x.MoveToSlot(GameManager.Instance.Trash)));
         _jokersOnSale.Clear();
