@@ -22,15 +22,20 @@ public class Movable : MonoBehaviour
     protected JokerStats _jokerStats;
 
     protected Coroutine _c;
+
+    protected bool _canBeMovedManually = true;
     protected void Awake()
     {
         _canBeMoved = true;
 
     }
-
+    public virtual void InitStats(JokerStats newStats)
+    {
+        _jokerStats = newStats;
+    }
     protected void OnMouseDown()
     {
-        if (!_canBeMoved)
+        if (!_canBeMoved || !GameManager.Instance.CanMoveEntities)
             return;        
         GetComponent<Rigidbody>().isKinematic = true;
         GameManager.Instance.CurrentDraggedMovable = this;
@@ -38,7 +43,7 @@ public class Movable : MonoBehaviour
 
     protected void OnMouseDrag()
     {
-        if (!_canBeMoved)
+        if (!_canBeMoved || !GameManager.Instance.CanMoveEntities)
             return;
         
         RaycastHit hit;
@@ -51,7 +56,7 @@ public class Movable : MonoBehaviour
 
     protected void OnMouseUp()
     {
-        if (!_canBeMoved)
+        if (!_canBeMoved || !GameManager.Instance.CanMoveEntities)
             return;
         GameManager.Instance.CurrentDraggedMovable = null;
 
@@ -67,7 +72,7 @@ public class Movable : MonoBehaviour
 
     }
 
-    protected IEnumerator MoveToSlot(Slot targetSlot)
+    public IEnumerator MoveToSlot(Slot targetSlot)
     {
         _slotBase.IsOccupied = false;
         GetComponent<Rigidbody>().isKinematic = true;
@@ -85,8 +90,8 @@ public class Movable : MonoBehaviour
         GetComponent<Rigidbody>().isKinematic = false;
         if (AnalyseNewSlot(targetSlot))
         {
-
-            targetSlot.IsOccupied = true;
+            if(targetSlot.SlotType != Slot.ESlotType.TRASH_SLOT)
+                targetSlot.IsOccupied = true;
             _slotBase = targetSlot;
         }
         else
@@ -102,6 +107,12 @@ public class Movable : MonoBehaviour
     {
         return true;
     }
+    public IEnumerator Die()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
+    }
+
 }
 public class JokerStats
 {
@@ -109,9 +120,9 @@ public class JokerStats
     { 
         _name = name;
         _humourStats = new();
-        _humourStats.Add(new JokerStatItem(GameData.EHumourType.DarkHumour, 0));
-        _humourStats.Add(new JokerStatItem(GameData.EHumourType.Imitations, 0));
-        _humourStats.Add(new JokerStatItem(GameData.EHumourType.Jokes, 0));
+        _humourStats.Add(new JokerStatItem(GameData.EHumourType.DarkHumour, 1));
+        _humourStats.Add(new JokerStatItem(GameData.EHumourType.Imitations, 1));
+        _humourStats.Add(new JokerStatItem(GameData.EHumourType.Jokes, 1));
     }
 
     public string Name => _name;

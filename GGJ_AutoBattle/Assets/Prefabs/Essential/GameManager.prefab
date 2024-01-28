@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d710bd7a39f848f4e9919f4c46e29274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _trash: {fileID: 0}
+  CanMoveEntities: 1
   _gameData: {fileID: 11400000, guid: 0774a7883f3cdf2468d39fc34614531f, type: 2}
