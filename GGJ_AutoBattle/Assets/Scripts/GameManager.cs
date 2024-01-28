@@ -47,7 +47,9 @@ public class GameManager : MonoBehaviour
     private Slot _trash;
     [SerializeField]
     private GameObject _loseScreen;
+    [SerializeField]
 
+    private ShopManager sm;
 
     public List<HumourTypeData> HumourTypeDatas => _humourTypeDatas;
     List<HumourTypeData> _humourTypeDatas = new();
@@ -122,7 +124,7 @@ public class GameManager : MonoBehaviour
                 return;
             case EUpgradeType.ADD_MONEY:
                 Debug.Log("<color=yellow> Upgrade : ADD_MONEY</color>");
-                ShopManager.Instance.Money += UnityEngine.Random.Range(_gameData.MoneyUpgradeMin, _gameData.MoneyUpgradeMax);
+                sm.Money += UnityEngine.Random.Range(_gameData.MoneyUpgradeMin, _gameData.MoneyUpgradeMax);
                 return;
             case EUpgradeType.ADD_STATS:
                 Debug.Log("<color=yellow> Upgrade : ADD_STATS</color>");
@@ -196,7 +198,7 @@ public class GameManager : MonoBehaviour
                 return;
             case EGamePhase.SHOP:
                 CanMoveEntities = true;
-                ShopManager.Instance.StartShopPhase();
+                sm.StartShopPhase();
                 return;
             case EGamePhase.FIGHT:
                 CanMoveEntities = false;
