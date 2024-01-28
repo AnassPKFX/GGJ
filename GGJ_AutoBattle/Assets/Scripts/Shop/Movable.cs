@@ -132,8 +132,9 @@ public class Movable : MonoBehaviour
     }
     public IEnumerator Die()
     {
-        yield return new WaitForSeconds(1);
+        //yield return new WaitForSeconds(1);
         Destroy(gameObject);
+        yield break;
     }
 
 }

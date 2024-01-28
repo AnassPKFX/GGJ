@@ -68,11 +68,11 @@ public class ShopManager : MonoBehaviour
         StartCoroutine(Wait(1.5f));
     }
     IEnumerator Wait(float t) { 
+        ShopScene.SetActive(false);
         yield return new WaitForSeconds(t);
         _jokersOnSale.ForEach(x => x.transform.GetComponent<Collider>().enabled = false);
         _jokersOnSale.ForEach(x => StartCoroutine(x.MoveToSlot(GameManager.Instance.Trash)));
         _jokersOnSale.Clear();
-        ShopScene.SetActive(false);
         GameManager.Instance.NextPhase(false);
     }
     public void Reroll()
